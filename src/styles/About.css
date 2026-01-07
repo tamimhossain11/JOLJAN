@@ -1,0 +1,149 @@
+.about-page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.page-hero {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #00ccff;
+  margin-bottom: 1rem;
+}
+
+[data-theme='light'] .page-title {
+  color: #0066cc;
+}
+
+.page-subtitle {
+  font-size: 1.3rem;
+  color: #b3d9ff;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+[data-theme='light'] .page-subtitle {
+  color: #4d94cc;
+}
+
+.mission-section {
+  padding: 4rem 0;
+}
+
+.mission-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.mission-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #b3d9ff;
+  text-align: center;
+}
+
+[data-theme='light'] .mission-text {
+  color: #4d94cc;
+}
+
+.values-section {
+  padding: 4rem 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-icon {
+  color: #00ccff;
+  margin-bottom: 1rem;
+}
+
+[data-theme='light'] .value-icon {
+  color: #0066cc;
+}
+
+.values-grid h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+[data-theme='light'] .values-grid h3 {
+  color: #001a33;
+}
+
+.values-grid p {
+  color: #b3d9ff;
+  line-height: 1.6;
+}
+
+[data-theme='light'] .values-grid p {
+  color: #4d94cc;
+}
+
+.team-section {
+  padding: 4rem 0 6rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member-avatar {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.team-member-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+[data-theme='light'] .team-member-name {
+  color: #001a33;
+}
+
+.team-member-role {
+  color: #00ccff;
+  text-align: center;
+}
+
+[data-theme='light'] .team-member-role {
+  color: #0066cc;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .mission-card {
+    padding: 2rem;
+  }
+
+  .mission-text {
+    font-size: 1rem;
+  }
+}
+
+

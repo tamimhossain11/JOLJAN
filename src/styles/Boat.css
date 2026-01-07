@@ -1,0 +1,128 @@
+.boat-page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.boat-showcase {
+  padding: 2rem 0 4rem;
+}
+
+.boat-image-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.boat-image-placeholder {
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 102, 204, 0.1);
+}
+
+.boat-image-placeholder .placeholder-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.boat-image-placeholder p {
+  color: #66ccff;
+  font-size: 1.5rem;
+}
+
+[data-theme='light'] .boat-image-placeholder p {
+  color: #0066cc;
+}
+
+.specs-section {
+  padding: 4rem 0;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.spec-icon {
+  font-size: 2.5rem;
+  color: #00ccff;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+[data-theme='light'] .spec-icon {
+  color: #0066cc;
+}
+
+.spec-label {
+  font-size: 0.9rem;
+  color: #b3d9ff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+[data-theme='light'] .spec-label {
+  color: #4d94cc;
+}
+
+.spec-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
+[data-theme='light'] .spec-value {
+  color: #001a33;
+}
+
+.features-section {
+  padding: 4rem 0 6rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+[data-theme='light'] .feature-title {
+  color: #001a33;
+}
+
+.feature-description {
+  color: #b3d9ff;
+  line-height: 1.6;
+}
+
+[data-theme='light'] .feature-description {
+  color: #4d94cc;
+}
+
+@media (max-width: 768px) {
+  .boat-image-placeholder .placeholder-icon {
+    font-size: 4rem;
+  }
+
+  .boat-image-placeholder p {
+    font-size: 1.2rem;
+  }
+}
+
+
