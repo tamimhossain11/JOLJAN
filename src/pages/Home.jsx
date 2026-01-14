@@ -1,33 +1,59 @@
 import { motion } from 'framer-motion';
-import { FiAward, FiTarget, FiUsers, FiArrowRight } from 'react-icons/fi';
+import { FiAward, FiTarget, FiUsers, FiArrowRight, FiTool, FiZap, FiShield } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
+import Footer from '../components/Footer';
 import '../styles/Home.css';
 
 const Home = () => {
-  const features = [
+  const navCards = [
     {
       icon: <FiTarget size={40} />,
-      title: 'Innovation',
-      description: 'Cutting-edge autonomous navigation systems'
+      title: 'RoboBoat 2026',
+      description: 'Learn about the competition and our strategy',
+      link: '/roboboat',
+      gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: <FiAward size={40} />,
-      title: 'Excellence',
-      description: 'Award-winning designs and performance'
+      icon: <FiTool size={40} />,
+      title: 'The Boat',
+      description: 'Explore our autonomous surface vehicle',
+      link: '/boat',
+      gradient: 'from-purple-500 to-pink-500'
     },
     {
       icon: <FiUsers size={40} />,
-      title: 'Teamwork',
-      description: 'Collaborative engineering at its finest'
+      title: 'The Team',
+      description: 'Meet the people behind the innovation',
+      link: '/team',
+      gradient: 'from-orange-500 to-red-500'
+    },
+    {
+      icon: <FiZap size={40} />,
+      title: 'Projects',
+      description: 'Discover our work and achievements',
+      link: '/projects',
+      gradient: 'from-green-500 to-teal-500'
     }
   ];
 
   return (
     <div className="home-page">
-      {/* Hero Section */}
+      {/* Hero Section with strong visual */}
       <section className="hero-section">
+        {/* Background Video */}
+        <video
+          className="hero-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/Joljan.mp4" type="video/mp4" />
+        </video>
+        
+        <div className="hero-overlay"></div>
         <div className="hero-content">
           <motion.h1
             className="hero-title"
@@ -35,29 +61,39 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Welcome to <span className="gradient-text">DOB JOLJAN</span>
+            DoB <span className="gradient-text">Joljan</span>
           </motion.h1>
           
-          <motion.p
+          <motion.h2
             className="hero-subtitle"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Pioneering Autonomous Maritime Technology
+            Innovation on Water. Teamwork on Land.
+          </motion.h2>
+          
+          <motion.p
+            className="hero-description"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            Autonomous marine robotics for RoboBoat 2026. Built with precision, tested with 
+            persistence, and driven by innovation.
           </motion.p>
           
           <motion.div
             className="hero-buttons"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
           >
             <Link to="/boat" className="btn btn-primary">
-              Explore Our Boat <FiArrowRight />
+              Explore the Boat <FiArrowRight />
             </Link>
-            <Link to="/about" className="btn btn-secondary">
-              Learn More
+            <Link to="/roboboat" className="btn btn-secondary">
+              RoboBoat 2026
             </Link>
           </motion.div>
         </div>
@@ -67,48 +103,118 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <AnimatedSection className="features-section">
+      {/* Introduction Video Section */}
+      <AnimatedSection className="video-section">
         <div className="container">
-          <h2 className="section-title">What Drives Us</h2>
-          <div className="features-grid">
-            {features.map((feature, index) => (
-              <AnimatedSection key={index} delay={index * 0.2}>
-                <GlassCard>
-                  <div className="feature-icon">{feature.icon}</div>
-                  <h3 className="feature-title">{feature.title}</h3>
-                  <p className="feature-description">{feature.description}</p>
-                </GlassCard>
-              </AnimatedSection>
-            ))}
+          <h2 className="section-title">Our Journey</h2>
+          <p className="section-subtitle">
+            From concept to competition—building an autonomous surface vehicle for RoboBoat 2026
+          </p>
+          <GlassCard hover={false} className="video-card">
+            <div className="video-placeholder">
+              <div className="placeholder-icon">▶️</div>
+              <p>Team & Project Overview</p>
+              <span className="video-note">(Video coming soon)</span>
+            </div>
+          </GlassCard>
+        </div>
+      </AnimatedSection>
+
+      {/* About Dreams of Bangladesh */}
+      <AnimatedSection className="about-dob-section">
+        <div className="container">
+          <div className="about-dob-content">
+            <div className="about-dob-text">
+              <h2 className="section-title">About Dreams of Bangladesh</h2>
+              
+              <div className="about-subsection">
+                <h3><FiUsers className="inline-icon" /> Who We Are</h3>
+                <p>
+                  Dreams of Bangladesh (DoB) is a youth-led organization making robotics and marine technology 
+                  accessible to students across Bangladesh. We believe in learning by building—turning ideas into 
+                  working projects through hands-on experience in robotics, embedded systems, AI, and autonomous systems.
+                </p>
+              </div>
+
+              <div className="about-subsection">
+                <h3><FiTarget className="inline-icon" /> Why RoboBoat</h3>
+                <p>
+                  RoboBoat 2026 gives us the opportunity to apply our skills in real-world marine robotics, 
+                  represent Bangladesh internationally, and push our limits as engineers and innovators. 
+                  Every challenge teaches us resilience, teamwork, and creative problem-solving.
+                </p>
+              </div>
+
+              <div className="about-subsection">
+                <h3><FiZap className="inline-icon" /> Our Vision</h3>
+                <p>
+                  To empower the next generation of Bangladeshi engineers and innovators, proving that 
+                  great ideas can come from anywhere. We're building confidence, competence, and a 
+                  community that will contribute to global challenges in robotics and beyond.
+                </p>
+              </div>
+            </div>
+
+            <div className="about-dob-visual">
+              <GlassCard hover={false}>
+                <div className="image-placeholder large">
+                  <div className="placeholder-icon">🚤</div>
+                  <p>Team with Boat Photo</p>
+                </div>
+              </GlassCard>
+
+              <div className="mission-highlights">
+                <div className="highlight-item">
+                  <FiShield className="highlight-icon" />
+                  <div>
+                    <h4>Safety First</h4>
+                    <p>Multiple failsafes and emergency systems</p>
+                  </div>
+                </div>
+                <div className="highlight-item">
+                  <FiAward className="highlight-icon" />
+                  <div>
+                    <h4>Autonomous</h4>
+                    <p>Full onboard decision-making capabilities</p>
+                  </div>
+                </div>
+                <div className="highlight-item">
+                  <FiUsers className="highlight-icon" />
+                  <div>
+                    <h4>Student-Led</h4>
+                    <p>Designed, built, and programmed by students</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </AnimatedSection>
 
-      {/* About Preview Section */}
-      <AnimatedSection className="about-preview-section">
+      {/* Quick Navigation Cards */}
+      <AnimatedSection className="quick-nav-section">
         <div className="container">
-          <div className="about-preview-content">
-            <div className="about-preview-text">
-              <h2 className="section-title">About Our Team</h2>
-              <p>
-                DOB JOLJAN is a passionate team of engineers and innovators 
-                dedicated to pushing the boundaries of autonomous maritime technology. 
-                We compete in the prestigious Roboboat Competition, showcasing 
-                our advanced autonomous surface vehicle designs.
-              </p>
-              <Link to="/about" className="btn btn-outline">
-                Meet the Team <FiArrowRight />
-              </Link>
-            </div>
-            <div className="about-preview-image">
-              <GlassCard hover={false}>
-                <div className="image-placeholder">
-                  <div className="placeholder-icon">🚤</div>
-                  <p>Team Photo</p>
-                </div>
-              </GlassCard>
-            </div>
+          <h2 className="section-title">Explore Our Journey</h2>
+          <p className="section-subtitle">
+            Discover more about our competition, technology, team, and projects
+          </p>
+          <div className="quick-nav-grid">
+            {navCards.map((card, index) => (
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <Link to={card.link} className="nav-card-link">
+                  <GlassCard className="nav-card">
+                    <div className={`nav-card-icon gradient-${card.gradient}`}>
+                      {card.icon}
+                    </div>
+                    <h3 className="nav-card-title">{card.title}</h3>
+                    <p className="nav-card-description">{card.description}</p>
+                    <div className="nav-card-arrow">
+                      <FiArrowRight />
+                    </div>
+                  </GlassCard>
+                </Link>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </AnimatedSection>
@@ -116,39 +222,30 @@ const Home = () => {
       {/* Stats Section */}
       <AnimatedSection className="stats-section">
         <div className="container">
+          <h2 className="section-title">DoB Joljan at a Glance</h2>
           <div className="stats-grid">
             <GlassCard>
-              <div className="stat-number">5+</div>
-              <div className="stat-label">Years Experience</div>
+              <div className="stat-number">1</div>
+              <div className="stat-label">Autonomous Surface Vehicle</div>
             </GlassCard>
             <GlassCard>
-              <div className="stat-number">20+</div>
+              <div className="stat-number">25+</div>
               <div className="stat-label">Team Members</div>
             </GlassCard>
             <GlassCard>
-              <div className="stat-number">10+</div>
-              <div className="stat-label">Competitions</div>
+              <div className="stat-number">6</div>
+              <div className="stat-label">Mission Challenges</div>
             </GlassCard>
             <GlassCard>
-              <div className="stat-number">3+</div>
-              <div className="stat-label">Awards Won</div>
+              <div className="stat-number">2026</div>
+              <div className="stat-label">RoboBoat Competition</div>
             </GlassCard>
           </div>
         </div>
       </AnimatedSection>
 
-      {/* CTA Section */}
-      <AnimatedSection className="cta-section">
-        <div className="container">
-          <GlassCard className="cta-card">
-            <h2>Ready to Join Our Journey?</h2>
-            <p>Get in touch with us to learn more about our project and opportunities.</p>
-            <Link to="/contact" className="btn btn-primary">
-              Contact Us <FiArrowRight />
-            </Link>
-          </GlassCard>
-        </div>
-      </AnimatedSection>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

@@ -28,6 +28,20 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
+        {/* Background Video */}
+        <video
+          className="loading-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/Joljan.mp4" type="video/mp4" />
+        </video>
+
+        {/* Video Overlay */}
+        <div className="loading-overlay"></div>
+        
         <div className="loading-content">
           <motion.div
             className="loading-logo"
@@ -41,7 +55,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
               <div className="wave wave-3"></div>
             </div>
             <h1 className="loading-title">DOB JOLJAN</h1>
-            <p className="loading-subtitle">Roboboat Competition</p>
+            <p className="loading-subtitle">RoboBoat 2026</p>
           </motion.div>
           
           <motion.div
@@ -60,26 +74,6 @@ const LoadingScreen = ({ onLoadingComplete }) => {
             </div>
             <span className="progress-text">{progress}%</span>
           </motion.div>
-        </div>
-        
-        {/* Animated particles */}
-        <div className="particles">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="particle"
-              initial={{ y: '100vh', x: Math.random() * window.innerWidth, opacity: 0 }}
-              animate={{
-                y: '-100vh',
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
         </div>
       </motion.div>
     </AnimatePresence>

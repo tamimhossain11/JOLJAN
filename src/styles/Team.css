@@ -1,0 +1,450 @@
+.team-page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.team-hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-radius: 20px;
+  margin-bottom: 3rem;
+}
+
+.hero-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+[data-theme="light"] .page-subtitle {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Team Introduction */
+.team-intro-section {
+  margin-bottom: 3rem;
+}
+
+.team-intro-card {
+  text-align: center;
+  padding: 3rem 2.5rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="light"] .section-title {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-theme="light"] .intro-text {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Group Photo */
+.group-photo-section {
+  margin-bottom: 4rem;
+}
+
+.group-photo-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.group-photo-placeholder {
+  padding: 15rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-photo-placeholder .placeholder-icon {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
+
+.group-photo-placeholder p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .group-photo-placeholder p {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.photo-note {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="light"] .photo-note {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Departments Container */
+.departments-container {
+  margin: 4rem 0;
+}
+
+.department-section {
+  padding: 3rem 0;
+}
+
+.department-section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme="light"] .department-section:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.department-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.department-icon {
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.department-header-text {
+  flex: 1;
+}
+
+.department-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="light"] .department-name {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.department-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+[data-theme="light"] .department-description {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Members Grid */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.member-card {
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+}
+
+.member-photo-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 3rem;
+  border: 3px solid rgba(102, 126, 234, 0.3);
+}
+
+.photo-icon {
+  opacity: 0.6;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.member-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="light"] .member-name {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.member-role {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #667eea;
+  margin: 0;
+}
+
+.member-responsibility {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.5;
+}
+
+[data-theme="light"] .member-responsibility {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Team Stats */
+.team-stats-section {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  margin: 4rem 0;
+}
+
+[data-theme="light"] .team-stats-section {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.team-stats-section .section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+[data-theme="light"] .stat-label {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Join CTA */
+.join-cta-section {
+  margin: 4rem 0;
+}
+
+.join-cta-card {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.join-cta-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="light"] .join-cta-card h2 {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.join-cta-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 2rem 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-theme="light"] .join-cta-card p {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .members-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .department-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-page {
+    padding-top: 60px;
+  }
+
+  .team-hero {
+    padding: 2.5rem 0;
+  }
+
+  .hero-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .team-intro-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .group-photo-placeholder {
+    padding: 10rem 1.5rem;
+  }
+
+  .department-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+
+  .department-name {
+    font-size: 1.8rem;
+  }
+
+  .department-description {
+    font-size: 1rem;
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-cta-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .join-cta-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .join-cta-card p {
+    font-size: 1rem;
+  }
+}
