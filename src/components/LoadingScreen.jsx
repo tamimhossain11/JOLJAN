@@ -49,7 +49,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img src="/joljan.PNG" alt="DoB Joljan" className="loading-logo-image" />
+            <img src="/joljan.png" alt="DoB Joljan" className="loading-logo-image" />
             <p className="loading-subtitle">RoboBoat 2026</p>
           </motion.div>
           

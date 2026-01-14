@@ -50,7 +50,7 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="footer-section footer-brand">
               <div className="footer-logo">
-                <img src="/dob.PNG" alt="Dreams of Bangladesh" className="footer-logo-image" />
+                <img src="/dob.png" alt="Dreams of Bangladesh" className="footer-logo-image" />
               </div>
               <p className="footer-tagline">RoboBoat 2026</p>
               <p className="footer-description">
