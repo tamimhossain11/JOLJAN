@@ -219,6 +219,9 @@
 .featured-image-placeholder .placeholder-icon {
   font-size: 6rem;
   margin-bottom: 1rem;
+  color: #667eea;
+  display: flex;
+  justify-content: center;
 }
 
 .featured-image-placeholder p {
@@ -295,6 +298,10 @@
 
 .project-icon {
   font-size: 4rem;
+  color: #667eea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-content {

@@ -50,7 +50,7 @@ const Team = () => {
         {
           name: 'Ishmam Tahsan Masafi',
           role: 'Mechanical Team Member',
-          image: '/team/atif.jpeg'
+          image: '/team/masafi.jpeg'
         },
       ]
     },

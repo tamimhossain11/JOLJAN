@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 import Footer from '../components/Footer';
-import { FiImage, FiUsers, FiTool, FiZap } from 'react-icons/fi';
+import { FiImage, FiUsers, FiTool, FiZap, FiCamera, FiMessageCircle, FiActivity } from 'react-icons/fi';
 import '../styles/Gallery.css';
 
 const Gallery = () => {
@@ -30,6 +30,10 @@ const Gallery = () => {
     { src: '/gallery/team-w8.jpeg', title: 'Team Working Session 8', category: 'team-work' },
     { src: '/gallery/team-w9.jpeg', title: 'Team Working Session 9', category: 'team-work' },
     { src: '/gallery/team-w10.jpeg', title: 'Team Working Session 10', category: 'team-work' },
+    
+    // Development & Planning Photos
+    { src: '/gallery/team-r1.jpeg', title: 'Development Planning Session', category: 'development' },
+    { src: '/gallery/team-r2.jpeg', title: 'Technical Discussion', category: 'development' },
   ];
 
   const filteredImages = selectedCategory === 'all' 
@@ -103,7 +107,9 @@ const Gallery = () => {
           {selectedCategory !== 'all' && filteredImages.length === 0 && (
             <div className="empty-category">
               <GlassCard className="empty-card">
-                <div className="empty-icon">📸</div>
+                <div className="empty-icon">
+                  <FiCamera size={80} />
+                </div>
                 <h3>Coming Soon</h3>
                 <p>Photos for this category will be added soon!</p>
               </GlassCard>
@@ -115,22 +121,30 @@ const Gallery = () => {
             <AnimatedSection className="upcoming-section">
               <div className="upcoming-grid">
                 <GlassCard className="upcoming-card">
-                  <div className="upcoming-icon">🤝</div>
+                  <div className="upcoming-icon">
+                    <FiUsers size={48} />
+                  </div>
                   <h3>Outreach Photos</h3>
                   <p>Coming soon - Community engagement and presentations</p>
                 </GlassCard>
                 <GlassCard className="upcoming-card">
-                  <div className="upcoming-icon">💬</div>
+                  <div className="upcoming-icon">
+                    <FiMessageCircle size={48} />
+                  </div>
                   <h3>Discussion Photos</h3>
                   <p>Coming soon - Team meetings and planning sessions</p>
                 </GlassCard>
                 <GlassCard className="upcoming-card">
-                  <div className="upcoming-icon">🔧</div>
+                  <div className="upcoming-icon">
+                    <FiTool size={48} />
+                  </div>
                   <h3>Development Photos</h3>
                   <p>Coming soon - Building and assembly process</p>
                 </GlassCard>
                 <GlassCard className="upcoming-card">
-                  <div className="upcoming-icon">🧪</div>
+                  <div className="upcoming-icon">
+                    <FiActivity size={48} />
+                  </div>
                   <h3>Testing Photos</h3>
                   <p>Coming soon - Water tests and performance trials</p>
                 </GlassCard>

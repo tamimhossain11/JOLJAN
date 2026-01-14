@@ -1,5 +1,19 @@
 import { motion } from 'framer-motion';
-import { FiFolder, FiCalendar, FiTool, FiAward, FiBook } from 'react-icons/fi';
+import { 
+  FiFolder, 
+  FiCalendar, 
+  FiTool, 
+  FiAward, 
+  FiBook,
+  FiAnchor,
+  FiCpu,
+  FiZap,
+  FiDroplet,
+  FiPackage,
+  FiUsers,
+  FiActivity,
+  FiMap
+} from 'react-icons/fi';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 import Footer from '../components/Footer';
@@ -41,7 +55,7 @@ const Projects = () => {
       description: 'Initial autonomous boat prototype that laid the foundation for JOLJAN. Focused on basic navigation and control systems.',
       technologies: ['Arduino', 'GPS', 'Radio Control', 'Ultrasonic Sensors'],
       outcome: 'Successful autonomous waypoint navigation',
-      image: '🚤'
+      icon: <FiAnchor size={64} />
     },
     {
       title: 'Line Following Robot',
@@ -50,7 +64,7 @@ const Projects = () => {
       description: 'Educational robotics project teaching fundamentals of sensor integration and control algorithms.',
       technologies: ['Arduino', 'IR Sensors', 'Motor Control', 'PID'],
       outcome: 'First place in university competition',
-      image: '🤖'
+      icon: <FiCpu size={64} />
     },
     {
       title: 'Obstacle Avoidance Drone',
@@ -59,7 +73,7 @@ const Projects = () => {
       description: 'Quadcopter with autonomous obstacle avoidance capabilities using ultrasonic and optical flow sensors.',
       technologies: ['Flight Controller', 'Ultrasonic', 'Optical Flow', 'C++'],
       outcome: 'Demonstrated autonomous flight capabilities',
-      image: '🚁'
+      icon: <FiZap size={64} />
     },
     {
       title: 'Smart Irrigation System',
@@ -68,7 +82,7 @@ const Projects = () => {
       description: 'IoT-based automated irrigation system using soil moisture sensors and weather data integration.',
       technologies: ['ESP32', 'Sensors', 'MQTT', 'Cloud Platform'],
       outcome: 'Deployed in local agricultural project',
-      image: '💧'
+      icon: <FiDroplet size={64} />
     },
     {
       title: 'Robotic Arm Manipulator',
@@ -77,7 +91,7 @@ const Projects = () => {
       description: '6-DOF robotic arm with inverse kinematics for precise object manipulation and sorting.',
       technologies: ['Servo Motors', 'Kinematics', 'Python', 'Computer Vision'],
       outcome: 'Successfully demonstrated pick-and-place operations',
-      image: '🦾'
+      icon: <FiActivity size={64} />
     },
     {
       title: 'Autonomous Delivery Robot',
@@ -86,7 +100,7 @@ const Projects = () => {
       description: 'Indoor delivery robot with SLAM capabilities for autonomous navigation in structured environments.',
       technologies: ['ROS', 'LiDAR', 'SLAM', 'Path Planning'],
       outcome: 'Proof of concept for campus delivery system',
-      image: '📦'
+      icon: <FiPackage size={64} />
     }
   ];
 
@@ -182,7 +196,9 @@ const Projects = () => {
 
               <div className="featured-visual">
                 <div className="featured-image-placeholder">
-                  <div className="placeholder-icon">🚤</div>
+                  <div className="placeholder-icon">
+                    <FiAnchor size={120} />
+                  </div>
                   <p>JOLJAN</p>
                 </div>
               </div>
@@ -203,7 +219,7 @@ const Projects = () => {
               <AnimatedSection key={index} delay={index * 0.1}>
                 <GlassCard className="project-card">
                   <div className="project-image-placeholder">
-                    <div className="project-icon">{project.image}</div>
+                    <div className="project-icon">{project.icon}</div>
                   </div>
                   <div className="project-content">
                     <div className="project-header">
@@ -277,15 +293,15 @@ const Projects = () => {
             </p>
             <div className="research-areas">
               <div className="research-item">
-                <h4>🎓 Hands-On Experience</h4>
+                <h4><FiBook className="research-icon" /> Hands-On Experience</h4>
                 <p>Engineering design, programming, and system integration in real-world scenarios</p>
               </div>
               <div className="research-item">
-                <h4>🤝 Teamwork & Communication</h4>
+                <h4><FiUsers className="research-icon" /> Teamwork & Communication</h4>
                 <p>Coordinating tasks, sharing ideas, and making collective decisions</p>
               </div>
               <div className="research-item">
-                <h4>💡 Resilience & Creativity</h4>
+                <h4><FiZap className="research-icon" /> Resilience & Creativity</h4>
                 <p>Learning to adapt quickly when things don't go as planned through testing and iteration</p>
               </div>
             </div>

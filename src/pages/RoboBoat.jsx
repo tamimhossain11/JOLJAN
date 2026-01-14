@@ -8,7 +8,9 @@ import {
   FiNavigation,
   FiZap,
   FiAnchor,
-  FiPackage
+  FiPackage,
+  FiCpu,
+  FiActivity
 } from 'react-icons/fi';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
@@ -98,12 +100,12 @@ const RoboBoat = () => {
         <div className="container">
           <AnimatedSection>
             <motion.div
-              className="hero-badge"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              className="roboboat-logo-container"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <FiAward size={30} />
+              <img src="/roboboat-logo.webp" alt="RoboBoat" className="roboboat-logo" />
             </motion.div>
             <h1 className="page-title">RoboBoat 2026</h1>
             <p className="page-subtitle">
@@ -136,7 +138,9 @@ const RoboBoat = () => {
             <div className="content-visual">
               <GlassCard hover={false}>
                 <div className="image-placeholder">
-                  <div className="placeholder-icon">🏆</div>
+                  <div className="placeholder-icon">
+                    <FiTarget size={80} />
+                  </div>
                   <p>RoboBoat Competition</p>
                 </div>
               </GlassCard>
@@ -151,7 +155,9 @@ const RoboBoat = () => {
           <h2 className="section-title">Why RoboBoat Matters</h2>
           <div className="matters-grid">
             <GlassCard>
-              <div className="matter-icon">🌊</div>
+              <div className="matter-icon">
+                <FiAnchor size={48} />
+              </div>
               <h3>Real-World Maritime Autonomy</h3>
               <p>
                 RoboBoat matters because the future of maritime operations is autonomous. As oceans play 
@@ -162,7 +168,9 @@ const RoboBoat = () => {
               </p>
             </GlassCard>
             <GlassCard>
-              <div className="matter-icon">🤖</div>
+              <div className="matter-icon">
+                <FiCpu size={48} />
+              </div>
               <h3>Engineering, AI & Robotics Impact</h3>
               <p>
                 Through hands-on challenges, participants apply engineering, artificial intelligence, and 
@@ -172,7 +180,9 @@ const RoboBoat = () => {
               </p>
             </GlassCard>
             <GlassCard>
-              <div className="matter-icon">🎓</div>
+              <div className="matter-icon">
+                <FiAward size={48} />
+              </div>
               <h3>Learning Beyond Competition</h3>
               <p>
                 Beyond competition scores, RoboBoat emphasizes collaboration, systems thinking, and practical 
@@ -257,7 +267,7 @@ const RoboBoat = () => {
               <h3>Our Approach in Detail</h3>
               <div className="approach-content">
                 <div className="approach-item">
-                  <h4>🎯 Full Integrity & Safety</h4>
+                  <h4><FiTarget className="approach-icon" /> Full Integrity & Safety</h4>
                   <p>
                     Our team is committed to competing with full integrity, following the RoboNation Code 
                     of Conduct. We will build a fully autonomous, battery-powered ASV that meets all size, 
@@ -267,7 +277,7 @@ const RoboBoat = () => {
                   </p>
                 </div>
                 <div className="approach-item">
-                  <h4>🧪 Testing & Documentation</h4>
+                  <h4><FiActivity className="approach-icon" /> Testing & Documentation</h4>
                   <p>
                     We prioritize obstacle avoidance, careful handling of batteries, and strict compliance 
                     with RF and power regulations. Our team composition emphasizes student leadership, with 
@@ -277,7 +287,7 @@ const RoboBoat = () => {
                   </p>
                 </div>
                 <div className="approach-item">
-                  <h4>🛡️ Safety-First Design</h4>
+                  <h4><FiShield className="approach-icon" /> Safety-First Design</h4>
                   <p>
                     Safety is paramount in every aspect of our ASV. We implement onboard and wireless emergency 
                     stop systems, shrouded propulsion for safety, positive buoyancy design, and comprehensive 
@@ -286,7 +296,7 @@ const RoboBoat = () => {
                   </p>
                 </div>
                 <div className="approach-item">
-                  <h4>⚡ Collaboration & Innovation</h4>
+                  <h4><FiZap className="approach-icon" /> Collaboration & Innovation</h4>
                   <p>
                     We embrace collaboration, contributing to RoboNation's Data Sharing project to enhance 
                     machine vision reliability. Our approach combines technical excellence, safety-first practices, 

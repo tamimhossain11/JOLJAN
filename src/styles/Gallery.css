@@ -199,6 +199,9 @@
 .empty-icon {
   font-size: 5rem;
   margin-bottom: 1.5rem;
+  color: #667eea;
+  display: flex;
+  justify-content: center;
 }
 
 .empty-card h3 {
@@ -250,6 +253,9 @@
 .upcoming-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: #667eea;
+  display: flex;
+  justify-content: center;
 }
 
 .upcoming-card h3 {

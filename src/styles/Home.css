@@ -272,6 +272,9 @@
 .video-placeholder .placeholder-icon {
   font-size: 5rem;
   margin-bottom: 1.5rem;
+  color: #667eea;
+  display: flex;
+  justify-content: center;
 }
 
 .video-placeholder p {
@@ -367,6 +370,9 @@
 .image-placeholder .placeholder-icon {
   font-size: 5rem;
   margin-bottom: 1rem;
+  color: #667eea;
+  display: flex;
+  justify-content: center;
 }
 
 .image-placeholder p {

@@ -90,39 +90,11 @@
   overflow: hidden;
 }
 
-.boat-image-placeholder {
-  padding: 10rem 2rem;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.placeholder-icon {
-  font-size: 6rem;
-  margin-bottom: 1rem;
-}
-
-.boat-image-placeholder p {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem 0;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-[data-theme="light"] .boat-image-placeholder p {
-  color: rgba(0, 0, 0, 0.8);
-}
-
-.image-note {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-[data-theme="light"] .image-note {
-  color: rgba(0, 0, 0, 0.5);
+.boat-main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 /* Specifications Section */
@@ -315,6 +287,9 @@
 .design-3d-placeholder .placeholder-icon {
   font-size: 5rem;
   margin-bottom: 1rem;
+  color: #667eea;
+  display: flex;
+  justify-content: center;
 }
 
 .design-3d-placeholder p {
@@ -343,22 +318,49 @@
   gap: 2rem;
 }
 
-.render-placeholder {
-  padding: 8rem 1rem;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-  border-radius: 10px;
+.render-card {
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.render-placeholder p {
-  font-size: 1.1rem;
+.render-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+.render-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.render-card:hover .render-image {
+  transform: scale(1.05);
+}
+
+.render-label {
+  padding: 1rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.render-label p {
+  font-size: 1rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   margin: 0;
 }
 
-[data-theme="light"] .render-placeholder p {
-  color: rgba(0, 0, 0, 0.7);
+[data-theme="light"] .render-label {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="light"] .render-label p {
+  color: rgba(0, 0, 0, 0.9);
 }
 
 /* Responsive Design */
@@ -369,6 +371,12 @@
     text-align: left;
   }
 
+  .design-renders-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .design-renders-grid {
     grid-template-columns: 1fr;
   }

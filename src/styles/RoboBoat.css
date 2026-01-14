@@ -10,17 +10,18 @@
   position: relative;
 }
 
-.hero-badge {
+.roboboat-logo-container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  margin-bottom: 2rem;
+}
+
+.roboboat-logo {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(102, 126, 234, 0.4));
 }
 
 /* What is RoboBoat */
@@ -81,6 +82,9 @@
 .matter-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: #667eea;
+  display: flex;
+  justify-content: center;
 }
 
 /* Competition Structure */
@@ -303,10 +307,18 @@
   font-size: 1.1rem;
   margin: 0 0 0.75rem 0;
   color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 [data-theme="light"] .approach-item h4 {
   color: rgba(0, 0, 0, 0.85);
+}
+
+.approach-icon {
+  color: #667eea;
+  flex-shrink: 0;
 }
 
 .approach-item p {
@@ -346,9 +358,8 @@
     padding: 2rem 0;
   }
 
-  .hero-badge {
-    width: 60px;
-    height: 60px;
+  .roboboat-logo {
+    width: 150px;
   }
 
   .what-is-section,

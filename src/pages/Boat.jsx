@@ -13,7 +13,9 @@ import {
   FiShield,
   FiActivity,
   FiWifi,
-  FiLayers
+  FiLayers,
+  FiTool,
+  FiAnchor
 } from 'react-icons/fi';
 import '../styles/Boat.css';
 
@@ -177,11 +179,7 @@ const Boat = () => {
         <div className="container">
           <AnimatedSection>
             <GlassCard hover={false} className="boat-image-card">
-              <div className="boat-image-placeholder">
-                <div className="placeholder-icon">🚤</div>
-                <p>DoB Joljan - Autonomous Surface Vehicle</p>
-                <span className="image-note">(Add boat photo/render here)</span>
-              </div>
+              <img src="/boat3d-1.jpeg" alt="DoB Joljan - Autonomous Surface Vehicle" className="boat-main-image" />
             </GlassCard>
           </AnimatedSection>
         </div>
@@ -236,36 +234,110 @@ const Boat = () => {
       {/* 3D Design Section */}
       <AnimatedSection className="design-3d-section">
         <div className="container">
-          <h2 className="section-title">3D Design & Visualization</h2>
+          <h2 className="section-title">3D Design & Components</h2>
           <p className="section-subtitle">
-            Explore our boat design in detail
+            Explore every angle and component of DoB Joljan's design
           </p>
-          <GlassCard hover={false} className="design-3d-card">
-            <div className="design-3d-placeholder">
-              <div className="placeholder-icon">🎨</div>
-              <p>Interactive 3D Model</p>
-              <span className="design-note">
-                (Add 3D model viewer or annotated diagrams here)
-              </span>
-            </div>
-          </GlassCard>
           
           <div className="design-renders-grid">
-            <GlassCard hover={false}>
-              <div className="render-placeholder">
-                <p>Top View</p>
-              </div>
-            </GlassCard>
-            <GlassCard hover={false}>
-              <div className="render-placeholder">
-                <p>Side View</p>
-              </div>
-            </GlassCard>
-            <GlassCard hover={false}>
-              <div className="render-placeholder">
-                <p>Front View</p>
-              </div>
-            </GlassCard>
+            <AnimatedSection delay={0.1}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-1.jpeg" alt="DoB Joljan Top Side View" className="render-image" />
+                <div className="render-label">
+                  <p>Top Side View</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.15}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-2.jpeg" alt="DoB Joljan Back Angle" className="render-image" />
+                <div className="render-label">
+                  <p>Back Angle View</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.2}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-3.jpeg" alt="DoB Joljan Side View" className="render-image" />
+                <div className="render-label">
+                  <p>Side View</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.25}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-4.jpeg" alt="DoB Joljan Component Detail" className="render-image" />
+                <div className="render-label">
+                  <p>Component Detail</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.3}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-5.jpeg" alt="DoB Joljan Front View" className="render-image" />
+                <div className="render-label">
+                  <p>Front View</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.35}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-6.jpeg" alt="DoB Joljan Internal View" className="render-image" />
+                <div className="render-label">
+                  <p>Internal Components</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.4}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-7.jpeg" alt="DoB Joljan Hull Detail" className="render-image" />
+                <div className="render-label">
+                  <p>Hull Detail</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.45}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-8.jpeg" alt="DoB Joljan Propulsion" className="render-image" />
+                <div className="render-label">
+                  <p>Propulsion System</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.5}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-9.jpeg" alt="DoB Joljan Electronics Bay" className="render-image" />
+                <div className="render-label">
+                  <p>Electronics Bay</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.55}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-10.jpeg" alt="DoB Joljan Sensor Mount" className="render-image" />
+                <div className="render-label">
+                  <p>Sensor Mounting</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.6}>
+              <GlassCard hover={false} className="render-card">
+                <img src="/boat3d-11.jpeg" alt="DoB Joljan Assembly View" className="render-image" />
+                <div className="render-label">
+                  <p>Assembly View</p>
+                </div>
+              </GlassCard>
+            </AnimatedSection>
           </div>
         </div>
       </AnimatedSection>

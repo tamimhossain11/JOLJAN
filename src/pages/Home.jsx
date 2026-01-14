@@ -112,7 +112,9 @@ const Home = () => {
           </p>
           <GlassCard hover={false} className="video-card">
             <div className="video-placeholder">
-              <div className="placeholder-icon">▶️</div>
+              <div className="placeholder-icon">
+                <FiTarget size={80} />
+              </div>
               <p>Team & Project Overview</p>
               <span className="video-note">(Video coming soon)</span>
             </div>
@@ -158,7 +160,9 @@ const Home = () => {
             <div className="about-dob-visual">
               <GlassCard hover={false}>
                 <div className="image-placeholder large">
-                  <div className="placeholder-icon">🚤</div>
+                  <div className="placeholder-icon">
+                    <FiUsers size={80} />
+                  </div>
                   <p>Team with Boat Photo</p>
                 </div>
               </GlassCard>

@@ -135,6 +135,10 @@
 
 .blog-image-icon {
   font-size: 4rem;
+  color: #667eea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .blog-category-badge {

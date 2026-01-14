@@ -2,7 +2,25 @@ import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 import Footer from '../components/Footer';
-import { FiCalendar, FiUser, FiBookOpen, FiTool, FiCheckCircle, FiTrendingUp } from 'react-icons/fi';
+import { 
+  FiCalendar, 
+  FiUser, 
+  FiBookOpen, 
+  FiTool, 
+  FiCheckCircle, 
+  FiTrendingUp,
+  FiAnchor,
+  FiCamera,
+  FiSettings,
+  FiBatteryCharging,
+  FiCpu,
+  FiNavigation,
+  FiMap,
+  FiRadio,
+  FiDroplet,
+  FiAward,
+  FiZap
+} from 'react-icons/fi';
 import '../styles/Blog.css';
 
 const Blog = () => {
@@ -22,7 +40,7 @@ const Blog = () => {
       category: 'Weekly Updates',
       categoryColor: '#43e97b',
       excerpt: 'This week we completed our final round of testing at the lake. All autonomous navigation tasks are working reliably. We fine-tuned our PID parameters and tested emergency stop procedures multiple times.',
-      image: '🚤',
+      icon: <FiAnchor size={64} />,
       tags: ['Testing', 'Competition Prep', 'Navigation']
     },
     {
@@ -32,7 +50,7 @@ const Blog = () => {
       category: 'Testing Days',
       categoryColor: '#4facfe',
       excerpt: 'Today we tested our computer vision system for obstacle detection. The boat successfully identified and avoided buoys in various lighting conditions. We discovered some issues with reflections that we\'re now addressing.',
-      image: '📸',
+      icon: <FiCamera size={64} />,
       tags: ['Computer Vision', 'Testing', 'Obstacles']
     },
     {
@@ -42,7 +60,7 @@ const Blog = () => {
       category: 'Design Decisions',
       categoryColor: '#f093fb',
       excerpt: 'After extensive analysis and prototyping, we decided on a catamaran hull design. This provides superior stability for our sensor payload while maintaining good speed. The dual-hull design also offers redundancy in buoyancy.',
-      image: '⚙️',
+      icon: <FiSettings size={64} />,
       tags: ['Hull Design', 'Mechanical', 'Engineering']
     },
     {
@@ -52,7 +70,7 @@ const Blog = () => {
       category: 'Weekly Updates',
       categoryColor: '#43e97b',
       excerpt: 'Completed integration of our dual battery system this week. Main propulsion now runs on 6S LiPo while electronics use separate 4S system. This separation improved voltage stability significantly.',
-      image: '🔋',
+      icon: <FiBatteryCharging size={64} />,
       tags: ['Electronics', 'Power System', 'Integration']
     },
     {
@@ -62,7 +80,7 @@ const Blog = () => {
       category: 'Lessons Learned',
       categoryColor: '#ffa751',
       excerpt: 'Initially we started with ROS 1, but migrated to ROS 2 for better real-time performance and built-in security features. The migration took two weeks but proved worthwhile for system reliability.',
-      image: '💡',
+      icon: <FiCpu size={64} />,
       tags: ['Software', 'ROS', 'Architecture']
     },
     {
@@ -72,7 +90,7 @@ const Blog = () => {
       category: 'Testing Days',
       categoryColor: '#4facfe',
       excerpt: 'Validated our RTK-GPS system today achieving consistent 2cm accuracy. Tested in various conditions including under trees and near buildings. The base station setup works perfectly.',
-      image: '🛰️',
+      icon: <FiNavigation size={64} />,
       tags: ['GPS', 'RTK', 'Testing', 'Navigation']
     },
     {
@@ -82,7 +100,7 @@ const Blog = () => {
       category: 'Weekly Updates',
       categoryColor: '#43e97b',
       excerpt: 'Implemented A* path planning algorithm for dynamic obstacle avoidance. The boat can now replan its path in real-time when encountering unexpected obstacles.',
-      image: '🗺️',
+      icon: <FiMap size={64} />,
       tags: ['Autonomy', 'Path Planning', 'Algorithms']
     },
     {
@@ -92,7 +110,7 @@ const Blog = () => {
       category: 'Design Decisions',
       categoryColor: '#f093fb',
       excerpt: 'Finalized sensor placement after considering field of view, interference, and mounting accessibility. Camera positioned at bow, LiDAR centrally mounted, GPS antenna on mast.',
-      image: '📡',
+      icon: <FiRadio size={64} />,
       tags: ['Sensors', 'Design', 'Integration']
     },
     {
@@ -102,7 +120,7 @@ const Blog = () => {
       category: 'Lessons Learned',
       categoryColor: '#ffa751',
       excerpt: 'After a water ingress incident, we learned the importance of proper sealing. Now using conformal coating on PCBs, IP67 connectors, and dual-layer enclosures with dessicants.',
-      image: '💧',
+      icon: <FiDroplet size={64} />,
       tags: ['Electronics', 'Waterproofing', 'Hardware']
     },
     {
@@ -112,7 +130,7 @@ const Blog = () => {
       category: 'Weekly Updates',
       categoryColor: '#43e97b',
       excerpt: 'Major milestone achieved! JOLJAN completed its first fully autonomous navigation from start to finish, hitting all waypoints with high accuracy. The team is thrilled!',
-      image: '🎉',
+      icon: <FiAward size={64} />,
       tags: ['Milestone', 'Autonomy', 'Success']
     },
     {
@@ -122,7 +140,7 @@ const Blog = () => {
       category: 'Testing Days',
       categoryColor: '#4facfe',
       excerpt: 'Conducted thrust tests on both motors. Measured actual thrust curves vs specifications. Fine-tuned ESC settings for smoother acceleration and better low-speed control.',
-      image: '⚡',
+      icon: <FiZap size={64} />,
       tags: ['Propulsion', 'Testing', 'Performance']
     },
     {
@@ -132,7 +150,7 @@ const Blog = () => {
       category: 'Design Decisions',
       categoryColor: '#f093fb',
       excerpt: 'Chose MAVLink protocol for telemetry due to proven reliability and existing ground control software support. Implemented dual communication - 915MHz for command/control, WiFi for debugging.',
-      image: '📶',
+      icon: <FiRadio size={64} />,
       tags: ['Communication', 'Software', 'Telemetry']
     }
   ];
@@ -187,7 +205,7 @@ const Blog = () => {
               <AnimatedSection key={index} delay={index * 0.05}>
                 <GlassCard className="blog-card">
                   <div className="blog-image-placeholder">
-                    <div className="blog-image-icon">{post.image}</div>
+                    <div className="blog-image-icon">{post.icon}</div>
                     <div 
                       className="blog-category-badge" 
                       style={{ background: `${post.categoryColor}33`, borderColor: post.categoryColor, color: post.categoryColor }}
