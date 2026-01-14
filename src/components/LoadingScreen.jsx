@@ -49,12 +49,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="wave-container">
-              <div className="wave"></div>
-              <div className="wave wave-2"></div>
-              <div className="wave wave-3"></div>
-            </div>
-            <h1 className="loading-title">DOB JOLJAN</h1>
+            <img src="/joljan.PNG" alt="DoB Joljan" className="loading-logo-image" />
             <p className="loading-subtitle">RoboBoat 2026</p>
           </motion.div>
           

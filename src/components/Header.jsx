@@ -40,10 +40,11 @@ const Header = () => {
       <nav className="nav-container">
         <Link to="/" className="logo">
           <motion.div
+            className="logo-container"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            DOB JOLJAN
+            <img src="/joljan.PNG" alt="DoB Joljan" className="logo-image" />
           </motion.div>
         </Link>
 

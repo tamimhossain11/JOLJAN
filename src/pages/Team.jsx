@@ -6,6 +6,29 @@ import Footer from '../components/Footer';
 import '../styles/Team.css';
 
 const Team = () => {
+  const leadership = [
+    {
+      name: 'MD Moin Uddin',
+      role: 'Team Advisor',
+      image: '/team/moeen.jpeg'
+    },
+    {
+      name: 'MD Mubassirul Islam',
+      role: 'Team Mentor',
+      image: '/team/mubasshir.jpeg'
+    },
+    {
+      name: 'Mahadir Islam',
+      role: 'Team Lead',
+      image: '/team/mahadir.jpeg'
+    },
+    {
+      name: 'Mahadi Hassan',
+      role: 'Team Co-Lead',
+      image: '/team/mahadi.jpeg'
+    },
+  ];
+
   const departments = [
     {
       id: 'mechanical',
@@ -15,24 +38,19 @@ const Team = () => {
       description: 'Designing and building the physical structure and systems',
       members: [
         {
-          name: 'Team Member 1',
+          name: 'Al Amin Sani',
           role: 'Mechanical Lead',
-          responsibility: 'Hull design and structural engineering'
+          image: '/team/alamin.jpeg'
         },
         {
-          name: 'Team Member 2',
-          role: 'Propulsion Specialist',
-          responsibility: 'Thruster integration and testing'
+          name: 'Dewan MD Foyzullah',
+          role: 'Mechanical Co-Lead',
+          image: '/team/munim.jpeg'
         },
         {
-          name: 'Team Member 3',
-          role: 'CAD Designer',
-          responsibility: '3D modeling and technical drawings'
-        },
-        {
-          name: 'Team Member 4',
-          role: 'Fabrication Engineer',
-          responsibility: 'Manufacturing and assembly'
+          name: 'Ishmam Tahsan Masafi',
+          role: 'Mechanical Team Member',
+          image: '/team/atif.jpeg'
         },
       ]
     },
@@ -44,87 +62,90 @@ const Team = () => {
       description: 'Power systems, sensors, and electronic integration',
       members: [
         {
-          name: 'Team Member 5',
+          name: 'Kamrul Islam',
           role: 'Electrical Lead',
-          responsibility: 'Power distribution and circuit design'
+          image: '/team/kamrul.jpeg'
         },
         {
-          name: 'Team Member 6',
-          role: 'Sensor Integration',
-          responsibility: 'GPS, IMU, and sensor systems'
-        },
-        {
-          name: 'Team Member 7',
-          role: 'PCB Designer',
-          responsibility: 'Custom circuit board design'
-        },
-        {
-          name: 'Team Member 8',
-          role: 'Electronics Technician',
-          responsibility: 'Wiring and hardware testing'
+          name: 'Abrar Atif Rahman',
+          role: 'Electrical Co-Lead',
+          image: '/team/atif.jpeg'
         },
       ]
     },
     {
       id: 'software',
       icon: <FiCpu />,
-      name: 'Software & Autonomy Team',
+      name: 'Software Team',
       color: '#4facfe',
-      description: 'Autonomous navigation, AI, and control systems',
+      description: 'Autonomous navigation and control systems',
       members: [
         {
-          name: 'Team Member 9',
+          name: 'Anas Bim Alam',
           role: 'Software Lead',
-          responsibility: 'Overall software architecture'
-        },
-        {
-          name: 'Team Member 10',
-          role: 'Autonomy Engineer',
-          responsibility: 'Path planning and navigation'
-        },
-        {
-          name: 'Team Member 11',
-          role: 'Computer Vision',
-          responsibility: 'Object detection and perception'
-        },
-        {
-          name: 'Team Member 12',
-          role: 'Controls Engineer',
-          responsibility: 'PID tuning and control systems'
-        },
-        {
-          name: 'Team Member 13',
-          role: 'AI Specialist',
-          responsibility: 'Machine learning and AI models'
+          image: '/team/anas.jpeg'
         },
       ]
     },
     {
-      id: 'management',
+      id: 'website',
       icon: <FiFileText />,
-      name: 'Management & Documentation',
-      color: '#43e97b',
-      description: 'Project management, documentation, and outreach',
+      name: 'Website Team',
+      color: '#ffa751',
+      description: 'Web development and digital presence',
       members: [
         {
-          name: 'Team Member 14',
-          role: 'Team Captain',
-          responsibility: 'Overall team coordination'
+          name: 'Tamim Hossain',
+          role: 'Website Lead',
+          image: '/team/tamim.jpeg'
         },
         {
-          name: 'Team Member 15',
+          name: 'MD Asadullah Sami',
+          role: 'Website Co-Lead',
+          image: '/team/sami.jpeg'
+        },
+      ]
+    },
+    {
+      id: 'documentation',
+      icon: <FiFileText />,
+      name: 'Documentation Team',
+      color: '#43e97b',
+      description: 'Technical documentation and reports',
+      members: [
+        {
+          name: 'Ahnaf Safwan Islam',
           role: 'Documentation Lead',
-          responsibility: 'Technical documentation and reports'
+          image: '/team/ahnaf.jpeg'
         },
         {
-          name: 'Team Member 16',
-          role: 'Outreach Coordinator',
-          responsibility: 'Sponsorship and public relations'
+          name: 'Samin Yaser',
+          role: 'Documentation Co-Lead',
+          image: '/team/samin.jpeg'
+        },
+      ]
+    },
+    {
+      id: 'media',
+      icon: <FiFileText />,
+      name: 'Media & Outreach Team',
+      color: '#e74c3c',
+      description: 'Visual content, media, and public relations',
+      members: [
+        {
+          name: 'Mohammad Sifat',
+          role: 'Visual Lead',
+          image: '/team/sifat.jpeg'
         },
         {
-          name: 'Team Member 17',
-          role: 'Finance Manager',
-          responsibility: 'Budget and resource management'
+          name: 'Mohammed Nowfil Aziz',
+          role: 'Media & Outreach Lead',
+          image: '/team/nawfil.jpeg'
+        },
+        {
+          name: 'Ayaan Islam Ariyan',
+          role: 'Media & Outreach Co-Lead',
+          image: '/team/ariyan.jpeg'
         },
       ]
     }
@@ -168,16 +189,40 @@ const Team = () => {
         </div>
       </AnimatedSection>
 
-      {/* Group Photo */}
+      {/* Leadership Section */}
+      <AnimatedSection className="leadership-section">
+        <div className="container">
+          <h2 className="section-title">Leadership & Advisory</h2>
+          <div className="leadership-grid">
+            {leadership.map((member, index) => (
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <GlassCard className="member-card leadership-card">
+                  <div className="member-photo">
+                    <img src={member.image} alt={member.name} />
+                  </div>
+                  <div className="member-info">
+                    <h3 className="member-name">{member.name}</h3>
+                    <p className="member-role">{member.role}</p>
+                  </div>
+                </GlassCard>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Group Photos */}
       <AnimatedSection className="group-photo-section">
         <div className="container">
-          <GlassCard hover={false} className="group-photo-card">
-            <div className="group-photo-placeholder">
-              <div className="placeholder-icon">📸</div>
-              <p>Team Photo</p>
-              <span className="photo-note">Dreams of Bangladesh - RoboBoat 2025</span>
-            </div>
-          </GlassCard>
+          <h2 className="section-title">Team DoB Joljan</h2>
+          <div className="group-photos-grid">
+            <GlassCard hover={false} className="group-photo-card">
+              <img src="/team/team1.jpeg" alt="Dreams of Bangladesh Team" className="group-photo" />
+            </GlassCard>
+            <GlassCard hover={false} className="group-photo-card">
+              <img src="/team/team2.jpeg" alt="Dreams of Bangladesh Team" className="group-photo" />
+            </GlassCard>
+          </div>
         </div>
       </AnimatedSection>
 
@@ -203,13 +248,12 @@ const Team = () => {
                 {dept.members.map((member, memberIndex) => (
                   <AnimatedSection key={memberIndex} delay={memberIndex * 0.1}>
                     <GlassCard className="member-card">
-                      <div className="member-photo-placeholder">
-                        <div className="photo-icon">👤</div>
+                      <div className="member-photo">
+                        <img src={member.image} alt={member.name} />
                       </div>
                       <div className="member-info">
                         <h3 className="member-name">{member.name}</h3>
                         <p className="member-role">{member.role}</p>
-                        <p className="member-responsibility">{member.responsibility}</p>
                       </div>
                     </GlassCard>
                   </AnimatedSection>
@@ -226,11 +270,11 @@ const Team = () => {
           <h2 className="section-title">Our Team at a Glance</h2>
           <div className="stats-grid">
             <GlassCard>
-              <div className="stat-number">25+</div>
+              <div className="stat-number">16</div>
               <div className="stat-label">Team Members</div>
             </GlassCard>
             <GlassCard>
-              <div className="stat-number">4</div>
+              <div className="stat-number">6</div>
               <div className="stat-label">Departments</div>
             </GlassCard>
             <GlassCard>

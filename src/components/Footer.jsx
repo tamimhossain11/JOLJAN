@@ -50,14 +50,9 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="footer-section footer-brand">
               <div className="footer-logo">
-                <div className="logo-circle small">
-                  <span className="logo-text">DOB</span>
-                </div>
-                <div>
-                  <h3>Dreams of Bangladesh</h3>
-                  <p className="footer-tagline">RoboBoat 2026</p>
-                </div>
+                <img src="/dob.PNG" alt="Dreams of Bangladesh" className="footer-logo-image" />
               </div>
+              <p className="footer-tagline">RoboBoat 2026</p>
               <p className="footer-description">
                 A youth-led organization making robotics, marine technology, and innovation 
                 accessible to students across Bangladesh through hands-on learning and collaboration.

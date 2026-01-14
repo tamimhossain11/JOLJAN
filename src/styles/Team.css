@@ -80,9 +80,22 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
-/* Group Photo */
+/* Group Photos */
 .group-photo-section {
   margin-bottom: 4rem;
+  padding: 3rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme="light"] .group-photo-section {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.group-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .group-photo-card {
@@ -90,39 +103,16 @@
   overflow: hidden;
 }
 
-.group-photo-placeholder {
-  padding: 15rem 2rem;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.group-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.group-photo-placeholder .placeholder-icon {
-  font-size: 6rem;
-  margin-bottom: 1rem;
-}
-
-.group-photo-placeholder p {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem 0;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-[data-theme="light"] .group-photo-placeholder p {
-  color: rgba(0, 0, 0, 0.8);
-}
-
-.photo-note {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-[data-theme="light"] .photo-note {
-  color: rgba(0, 0, 0, 0.5);
+.group-photo-card:hover .group-photo {
+  transform: scale(1.02);
 }
 
 /* Departments Container */
@@ -204,21 +194,32 @@
   transform: translateY(-5px);
 }
 
-.member-photo-placeholder {
-  width: 120px;
-  height: 120px;
+.member-photo {
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   margin: 0 auto 1.5rem;
-  font-size: 3rem;
-  border: 3px solid rgba(102, 126, 234, 0.3);
+  border: 4px solid rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
 }
 
-.photo-icon {
-  opacity: 0.6;
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover .member-photo {
+  border-color: rgba(102, 126, 234, 0.7);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+  transform: scale(1.05);
+}
+
+.member-card:hover .member-photo img {
+  transform: scale(1.15);
 }
 
 .member-info {
@@ -245,15 +246,32 @@
   margin: 0;
 }
 
-.member-responsibility {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-  line-height: 1.5;
+/* Leadership Section */
+.leadership-section {
+  margin: 3rem 0;
+  padding: 3rem 0;
+  background: rgba(255, 255, 255, 0.02);
 }
 
-[data-theme="light"] .member-responsibility {
-  color: rgba(0, 0, 0, 0.6);
+[data-theme="light"] .leadership-section {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.leadership-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.leadership-card:hover {
+  border-color: rgba(102, 126, 234, 0.6);
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
 }
 
 /* Team Stats */
@@ -410,8 +428,17 @@
     font-size: 1rem;
   }
 
-  .group-photo-placeholder {
-    padding: 10rem 1.5rem;
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .group-photos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-photo {
+    width: 160px;
+    height: 160px;
   }
 
   .department-icon {
