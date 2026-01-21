@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 import '../styles/LoadingScreen.css';
 
 const LoadingScreen = ({ onLoadingComplete }) => {
+  const { isDark } = useTheme();
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -49,7 +51,11 @@ const LoadingScreen = ({ onLoadingComplete }) => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img src="/joljan.png" alt="DoB Joljan" className="loading-logo-image" />
+            <img 
+              src={isDark ? "/joljan.png" : "/logo-white.PNG"} 
+              alt="DoB Joljan" 
+              className="loading-logo-image" 
+            />
             <p className="loading-subtitle">RoboBoat 2026</p>
           </motion.div>
           

@@ -80,6 +80,41 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
+/* Team Video Section */
+.team-video-section {
+  margin: 3rem 0;
+  padding: 3rem 0;
+}
+
+.team-video-section .section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.team-video-card {
+  padding: 0;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 12px;
+}
+
 /* Group Photos */
 .group-photo-section {
   margin-bottom: 4rem;
@@ -91,11 +126,10 @@
   background: rgba(0, 0, 0, 0.02);
 }
 
-.group-photos-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
+/* Single Photo Container */
+.single-photo-container {
+  max-width: 900px;
+  margin: 2rem auto 1.5rem;
 }
 
 .group-photo-card {
@@ -113,6 +147,45 @@
 
 .group-photo-card:hover .group-photo {
   transform: scale(1.02);
+}
+
+/* Gallery Link */
+.gallery-link-text {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 1rem 0 0 0;
+}
+
+[data-theme="light"] .gallery-link-text {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.gallery-link {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.gallery-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.gallery-link:hover {
+  color: #764ba2;
+}
+
+.gallery-link:hover::after {
+  width: 100%;
 }
 
 /* Departments Container */
@@ -432,8 +505,9 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .group-photos-grid {
-    grid-template-columns: 1fr;
+  .single-photo-container {
+    max-width: 100%;
+    margin: 2rem 0 1.5rem;
   }
 
   .member-photo {
@@ -473,5 +547,22 @@
 
   .join-cta-card p {
     font-size: 1rem;
+  }
+
+  .team-video-card {
+    margin: 0 1rem;
+  }
+
+  .video-wrapper {
+    padding-bottom: 75%; /* More vertical on mobile for better viewing */
+  }
+
+  .single-photo-container {
+    margin: 1.5rem 0 1rem;
+  }
+
+  .gallery-link-text {
+    font-size: 1rem;
+    padding: 0 1rem;
   }
 }

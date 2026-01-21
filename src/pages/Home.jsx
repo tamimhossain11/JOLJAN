@@ -111,12 +111,18 @@ const Home = () => {
             From concept to competition—building an autonomous surface vehicle for RoboBoat 2026
           </p>
           <GlassCard hover={false} className="video-card">
-            <div className="video-placeholder">
-              <div className="placeholder-icon">
-                <FiTarget size={80} />
-              </div>
-              <p>Team & Project Overview</p>
-              <span className="video-note">(Video coming soon)</span>
+            <div className="video-wrapper-home">
+              <iframe 
+                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F699511343100055%2F&show_text=false&width=560&t=0" 
+                width="560" 
+                height="314" 
+                style={{border: 'none', overflow: 'hidden'}} 
+                scrolling="no" 
+                frameBorder="0" 
+                allowFullScreen={true} 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                title="Team & Project Overview"
+              ></iframe>
             </div>
           </GlassCard>
         </div>
@@ -158,13 +164,12 @@ const Home = () => {
             </div>
 
             <div className="about-dob-visual">
-              <GlassCard hover={false}>
-                <div className="image-placeholder large">
-                  <div className="placeholder-icon">
-                    <FiUsers size={80} />
-                  </div>
-                  <p>Team with Boat Photo</p>
-                </div>
+              <GlassCard hover={false} className="team-boat-photo-card">
+                <img 
+                  src="/gallery/team-boat-1.jpg" 
+                  alt="Dreams of Bangladesh Team with Boat" 
+                  className="team-boat-image"
+                />
               </GlassCard>
 
               <div className="mission-highlights">

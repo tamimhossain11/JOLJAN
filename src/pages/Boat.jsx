@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 import Footer from '../components/Footer';
@@ -15,11 +17,85 @@ import {
   FiWifi,
   FiLayers,
   FiTool,
-  FiAnchor
+  FiAnchor,
+  FiX,
+  FiChevronLeft,
+  FiChevronRight,
+  FiMaximize2
 } from 'react-icons/fi';
 import '../styles/Boat.css';
 
 const Boat = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const boatImages = [
+    { src: '/boat3d-1.jpeg', label: 'Top Side View', alt: 'DoB Joljan Top Side View' },
+    { src: '/boat3d-2.jpeg', label: 'Back Angle View', alt: 'DoB Joljan Back Angle' },
+    { src: '/boat3d-3.jpeg', label: 'Side View', alt: 'DoB Joljan Side View' },
+    { src: '/boat3d-4.jpeg', label: 'Component Detail', alt: 'DoB Joljan Component Detail' },
+    { src: '/boat3d-5.jpeg', label: 'Front View', alt: 'DoB Joljan Front View' },
+    { src: '/boat3d-6.jpeg', label: 'Internal Components', alt: 'DoB Joljan Internal View' },
+    { src: '/boat3d-7.jpeg', label: 'Hull Detail', alt: 'DoB Joljan Hull Detail' },
+    { src: '/boat3d-8.jpeg', label: 'Propulsion System', alt: 'DoB Joljan Propulsion' },
+    { src: '/boat3d-9.jpeg', label: 'Electronics Bay', alt: 'DoB Joljan Electronics Bay' },
+    { src: '/boat3d-10.jpeg', label: 'Sensor Mounting', alt: 'DoB Joljan Sensor Mount' },
+    { src: '/boat3d-11.jpeg', label: 'Assembly View', alt: 'DoB Joljan Assembly View' },
+  ];
+
+  const openLightbox = (index) => {
+    setCurrentImageIndex(index);
+    setSelectedImage(boatImages[index]);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
+
+  const goToNext = () => {
+    const nextIndex = (currentImageIndex + 1) % boatImages.length;
+    setCurrentImageIndex(nextIndex);
+    setSelectedImage(boatImages[nextIndex]);
+  };
+
+  const goToPrevious = () => {
+    const prevIndex = (currentImageIndex - 1 + boatImages.length) % boatImages.length;
+    setCurrentImageIndex(prevIndex);
+    setSelectedImage(boatImages[prevIndex]);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!selectedImage) return;
+      
+      if (e.key === 'Escape') {
+        setSelectedImage(null);
+      } else if (e.key === 'ArrowRight') {
+        const nextIndex = (currentImageIndex + 1) % boatImages.length;
+        setCurrentImageIndex(nextIndex);
+        setSelectedImage(boatImages[nextIndex]);
+      } else if (e.key === 'ArrowLeft') {
+        const prevIndex = (currentImageIndex - 1 + boatImages.length) % boatImages.length;
+        setCurrentImageIndex(prevIndex);
+        setSelectedImage(boatImages[prevIndex]);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    
+    // Prevent body scroll when lightbox is open
+    if (selectedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedImage, currentImageIndex, boatImages]);
+
   const specifications = [
     { label: 'Length', value: '1.5 meters' },
     { label: 'Width', value: '0.6 meters' },
@@ -234,113 +310,99 @@ const Boat = () => {
       {/* 3D Design Section */}
       <AnimatedSection className="design-3d-section">
         <div className="container">
-          <h2 className="section-title">3D Design & Components</h2>
-          <p className="section-subtitle">
-            Explore every angle and component of DoB Joljan's design
-          </p>
+          <div className="section-header-3d">
+            <h2 className="section-title">3D Design & Components</h2>
+            <p className="section-subtitle">
+              Explore every angle and component of DoB Joljan's design. Click on any image to view in full screen.
+            </p>
+          </div>
           
-          <div className="design-renders-grid">
-            <AnimatedSection delay={0.1}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-1.jpeg" alt="DoB Joljan Top Side View" className="render-image" />
-                <div className="render-label">
-                  <p>Top Side View</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.15}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-2.jpeg" alt="DoB Joljan Back Angle" className="render-image" />
-                <div className="render-label">
-                  <p>Back Angle View</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.2}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-3.jpeg" alt="DoB Joljan Side View" className="render-image" />
-                <div className="render-label">
-                  <p>Side View</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.25}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-4.jpeg" alt="DoB Joljan Component Detail" className="render-image" />
-                <div className="render-label">
-                  <p>Component Detail</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.3}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-5.jpeg" alt="DoB Joljan Front View" className="render-image" />
-                <div className="render-label">
-                  <p>Front View</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.35}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-6.jpeg" alt="DoB Joljan Internal View" className="render-image" />
-                <div className="render-label">
-                  <p>Internal Components</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.4}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-7.jpeg" alt="DoB Joljan Hull Detail" className="render-image" />
-                <div className="render-label">
-                  <p>Hull Detail</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.45}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-8.jpeg" alt="DoB Joljan Propulsion" className="render-image" />
-                <div className="render-label">
-                  <p>Propulsion System</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.5}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-9.jpeg" alt="DoB Joljan Electronics Bay" className="render-image" />
-                <div className="render-label">
-                  <p>Electronics Bay</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.55}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-10.jpeg" alt="DoB Joljan Sensor Mount" className="render-image" />
-                <div className="render-label">
-                  <p>Sensor Mounting</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.6}>
-              <GlassCard hover={false} className="render-card">
-                <img src="/boat3d-11.jpeg" alt="DoB Joljan Assembly View" className="render-image" />
-                <div className="render-label">
-                  <p>Assembly View</p>
-                </div>
-              </GlassCard>
-            </AnimatedSection>
+          <div className="design-gallery-grid">
+            {boatImages.map((image, index) => (
+              <AnimatedSection key={index} delay={index * 0.05}>
+                <motion.div
+                  className="gallery-item"
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => openLightbox(index)}
+                >
+                  <GlassCard hover={false} className="gallery-card">
+                    <div className="gallery-image-container">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="gallery-image" 
+                        loading="lazy"
+                      />
+                      <div className="gallery-overlay">
+                        <FiMaximize2 className="expand-icon" />
+                        <span className="view-text">Click to view</span>
+                      </div>
+                    </div>
+                    <div className="gallery-label">
+                      <p>{image.label}</p>
+                    </div>
+                  </GlassCard>
+                </motion.div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </AnimatedSection>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="lightbox-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeLightbox}
+          >
+            <motion.div
+              className="lightbox-container"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button className="lightbox-close" onClick={closeLightbox}>
+                <FiX />
+              </button>
+
+              {/* Navigation Buttons */}
+              <button className="lightbox-nav lightbox-prev" onClick={goToPrevious}>
+                <FiChevronLeft />
+              </button>
+              <button className="lightbox-nav lightbox-next" onClick={goToNext}>
+                <FiChevronRight />
+              </button>
+
+              {/* Image */}
+              <div className="lightbox-content">
+                <motion.img
+                  key={selectedImage.src}
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="lightbox-image"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2 }}
+                />
+                <div className="lightbox-info">
+                  <h3>{selectedImage.label}</h3>
+                  <p className="lightbox-counter">
+                    {currentImageIndex + 1} / {boatImages.length}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <Footer />
     </div>

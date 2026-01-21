@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 import Footer from '../components/Footer';
+import MapComponent from '../components/MapComponent';
 import { 
   FiMail, 
   FiMapPin, 
@@ -254,6 +255,19 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Map Section */}
+      <AnimatedSection className="map-section">
+        <div className="container">
+          <h2 className="section-title">Find Us</h2>
+          <p className="section-subtitle">
+            We're based in Dhaka, Bangladesh, working on cutting-edge robotics projects
+          </p>
+          <GlassCard className="map-card" hover={false}>
+            <MapComponent />
+          </GlassCard>
+        </div>
+      </AnimatedSection>
 
       {/* Additional Info Section */}
       <AnimatedSection className="additional-info-section">

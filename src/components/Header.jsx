@@ -44,7 +44,11 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src="/joljan.png" alt="DoB Joljan" className="logo-image" />
+            <img 
+              src={isDark ? "/joljan.png" : "/logo-white.PNG"} 
+              alt="DoB Joljan" 
+              className="logo-image" 
+            />
           </motion.div>
         </Link>
 

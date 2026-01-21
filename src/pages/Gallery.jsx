@@ -11,6 +11,7 @@ const Gallery = () => {
 
   const categories = [
     { id: 'all', name: 'All Photos', icon: <FiImage /> },
+    { id: 'team-photos', name: 'Team Photos', icon: <FiUsers /> },
     { id: 'team-work', name: 'Team Working', icon: <FiUsers /> },
     { id: 'development', name: 'Development & Planning', icon: <FiTool /> },
     { id: 'outreach', name: 'Outreach', icon: <FiZap /> },
@@ -19,6 +20,10 @@ const Gallery = () => {
   ];
 
   const galleryImages = [
+    // Team Group Photos
+    { src: '/team/team2.jpeg', title: 'Team DoB Joljan Group Photo', category: 'team-photos' },
+    { src: '/gallery/boat-team-2.jpg', title: 'DoB Team with Joljan Boat', category: 'team-photos' },
+    
     // Team Working Photos
     { src: '/gallery/team-w1.jpeg', title: 'Team Working Session 1', category: 'team-work' },
     { src: '/gallery/team-w2.jpeg', title: 'Team Working Session 2', category: 'team-work' },
@@ -34,11 +39,38 @@ const Gallery = () => {
     // Development & Planning Photos
     { src: '/gallery/team-r1.jpeg', title: 'Development Planning Session', category: 'development' },
     { src: '/gallery/team-r2.jpeg', title: 'Technical Discussion', category: 'development' },
+    
+    // Outreach Photos
+    { src: '/outreacch-1.jpeg', title: 'Community Outreach Event 1', category: 'outreach' },
+    { src: '/outreacch-2.jpeg', title: 'Community Outreach Event 2', category: 'outreach' },
+    { src: '/outreacch-3.jpeg', title: 'Community Outreach Event 3', category: 'outreach' },
+    { src: '/outreacch-5.jpeg', title: 'Community Outreach Event 5', category: 'outreach' },
+    { src: '/outreacch-6.jpeg', title: 'Community Outreach Event 6', category: 'outreach' },
+    
+    // Discussion Photos
+    { src: '/gallery/boat-team-2.jpg', title: 'Team Discussion Session', category: 'discussion', type: 'image' },
+    
+    // Testing Photos
+    { src: '/gallery/test-photo1.jpg', title: 'Boat Testing 1', category: 'testing', type: 'image' },
+    { src: '/gallery/test-photo2.jpg', title: 'Boat Testing 2', category: 'testing', type: 'image' },
+    { src: '/gallery/test-photo3.jpg', title: 'Boat Testing 3', category: 'testing', type: 'image' },
+    { src: '/gallery/test-photo4.jpg', title: 'Boat Testing 4', category: 'testing', type: 'image' },
+    
+    // Testing Videos
+    { 
+      src: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1241726657875293%2F&show_text=false&width=267&t=0', 
+      title: 'Boat Testing Session', 
+      category: 'testing',
+      type: 'video'
+    },
   ];
 
   const filteredImages = selectedCategory === 'all' 
     ? galleryImages 
     : galleryImages.filter(img => img.category === selectedCategory);
+
+  const videos = filteredImages.filter(item => item.type === 'video');
+  const images = filteredImages.filter(item => item.type !== 'video');
 
   return (
     <div className="gallery-page">
@@ -82,29 +114,65 @@ const Gallery = () => {
         </div>
       </AnimatedSection>
 
+      {/* Video Player Section - Only show on testing category */}
+      {videos.length > 0 && selectedCategory === 'testing' && (
+        <AnimatedSection className="video-player-section">
+          <div className="container">
+            <h2 className="section-title">Testing Videos</h2>
+            <p className="section-description">Watch our boat in action during testing sessions</p>
+            <div className="video-players-grid">
+              {videos.map((video, index) => (
+                <AnimatedSection key={index} delay={index * 0.1}>
+                  <GlassCard className="video-player-card" hover={false}>
+                    <div className="video-player-wrapper">
+                      <iframe 
+                        src={video.src}
+                        style={{border: 'none', overflow: 'hidden', width: '100%', height: '100%'}} 
+                        scrolling="no" 
+                        frameBorder="0" 
+                        allowFullScreen={true} 
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        title={video.title}
+                      ></iframe>
+                    </div>
+                    <div className="video-player-info">
+                      <h3>{video.title}</h3>
+                    </div>
+                  </GlassCard>
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+      )}
+
       {/* Gallery Grid */}
       <section className="gallery-section">
         <div className="container">
-          <div className="gallery-count">
-            <p>Showing {filteredImages.length} {selectedCategory === 'all' ? 'photos' : `${categories.find(c => c.id === selectedCategory)?.name.toLowerCase()} photos`}</p>
-          </div>
-          <div className="gallery-grid">
-            {filteredImages.map((image, index) => (
-              <AnimatedSection key={index} delay={index * 0.05}>
-                <GlassCard className="gallery-item" hover={false}>
-                  <div className="gallery-image">
-                    <img src={image.src} alt={image.title} />
-                    <div className="gallery-overlay">
-                      <p className="gallery-title">{image.title}</p>
-                    </div>
-                  </div>
-                </GlassCard>
-              </AnimatedSection>
-            ))}
-          </div>
+          {images.length > 0 && (
+            <>
+              <div className="gallery-count">
+                <p>Showing {images.length} photo{images.length !== 1 ? 's' : ''}</p>
+              </div>
+              <div className="gallery-grid">
+                {images.map((image, index) => (
+                  <AnimatedSection key={index} delay={index * 0.05}>
+                    <GlassCard className="gallery-item" hover={false}>
+                      <div className="gallery-image">
+                        <img src={image.src} alt={image.title} />
+                        <div className="gallery-overlay">
+                          <p className="gallery-title">{image.title}</p>
+                        </div>
+                      </div>
+                    </GlassCard>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </>
+          )}
 
           {/* Placeholder for upcoming categories */}
-          {selectedCategory !== 'all' && filteredImages.length === 0 && (
+          {selectedCategory !== 'all' && videos.length === 0 && images.length === 0 && (
             <div className="empty-category">
               <GlassCard className="empty-card">
                 <div className="empty-icon">
@@ -117,37 +185,10 @@ const Gallery = () => {
           )}
 
           {/* Info Cards for Future Categories */}
-          {selectedCategory === 'all' && (
+          {selectedCategory === 'all' && filteredImages.length > 0 && (
             <AnimatedSection className="upcoming-section">
-              <div className="upcoming-grid">
-                <GlassCard className="upcoming-card">
-                  <div className="upcoming-icon">
-                    <FiUsers size={48} />
-                  </div>
-                  <h3>Outreach Photos</h3>
-                  <p>Coming soon - Community engagement and presentations</p>
-                </GlassCard>
-                <GlassCard className="upcoming-card">
-                  <div className="upcoming-icon">
-                    <FiMessageCircle size={48} />
-                  </div>
-                  <h3>Discussion Photos</h3>
-                  <p>Coming soon - Team meetings and planning sessions</p>
-                </GlassCard>
-                <GlassCard className="upcoming-card">
-                  <div className="upcoming-icon">
-                    <FiTool size={48} />
-                  </div>
-                  <h3>Development Photos</h3>
-                  <p>Coming soon - Building and assembly process</p>
-                </GlassCard>
-                <GlassCard className="upcoming-card">
-                  <div className="upcoming-icon">
-                    <FiActivity size={48} />
-                  </div>
-                  <h3>Testing Photos</h3>
-                  <p>Coming soon - Water tests and performance trials</p>
-                </GlassCard>
+              <div className="upcoming-info">
+                <p className="more-content-text">More photos and videos coming soon!</p>
               </div>
             </AnimatedSection>
           )}

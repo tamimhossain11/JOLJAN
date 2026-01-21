@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { FiFacebook, FiInstagram, FiLinkedin, FiYoutube, FiMail, FiMapPin } from 'react-icons/fi';
+import { useTheme } from '../context/ThemeContext';
 import '../styles/Footer.css';
 
 const Footer = () => {
+  const { isDark } = useTheme();
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
@@ -50,7 +52,11 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="footer-section footer-brand">
               <div className="footer-logo">
-                <img src="/dob.png" alt="Dreams of Bangladesh" className="footer-logo-image" />
+                <img 
+                  src={isDark ? "/dob.png" : "/logo-white.PNG"} 
+                  alt="Dreams of Bangladesh" 
+                  className="footer-logo-image" 
+                />
               </div>
               <p className="footer-tagline">RoboBoat 2026</p>
               <p className="footer-description">

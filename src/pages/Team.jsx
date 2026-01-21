@@ -49,7 +49,7 @@ const Team = () => {
         },
         {
           name: 'Ishmam Tahsan Masafi',
-          role: 'Mechanical Team Member',
+          role: 'Testing Lead',
           image: '/team/masafi.jpeg'
         },
       ]
@@ -81,7 +81,7 @@ const Team = () => {
       description: 'Autonomous navigation and control systems',
       members: [
         {
-          name: 'Anas Bim Alam',
+          name: 'Anas Bim Azim',
           role: 'Software Lead',
           image: '/team/anas.jpeg'
         },
@@ -138,7 +138,7 @@ const Team = () => {
           image: '/team/sifat.jpeg'
         },
         {
-          name: 'Mohammed Nowfil Aziz',
+          name: 'Mohammed Nawfil Aziz',
           role: 'Media & Outreach Lead',
           image: '/team/nawfil.jpeg'
         },
@@ -189,6 +189,27 @@ const Team = () => {
         </div>
       </AnimatedSection>
 
+      {/* Team Video */}
+      <AnimatedSection className="team-video-section">
+        <div className="container">
+          <h2 className="section-title">Meet Our Team</h2>
+          <GlassCard className="team-video-card" hover={false}>
+            <div className="video-wrapper">
+              <iframe 
+                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F699511343100055%2F&show_text=false&width=560&t=0" 
+                width="560" 
+                height="314" 
+                style={{border: 'none', overflow: 'hidden'}} 
+                scrolling="no" 
+                frameBorder="0" 
+                allowFullScreen={true} 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+          </GlassCard>
+        </div>
+      </AnimatedSection>
+
       {/* Leadership Section */}
       <AnimatedSection className="leadership-section">
         <div className="container">
@@ -215,14 +236,14 @@ const Team = () => {
       <AnimatedSection className="group-photo-section">
         <div className="container">
           <h2 className="section-title">Team DoB Joljan</h2>
-          <div className="group-photos-grid">
+          <div className="single-photo-container">
             <GlassCard hover={false} className="group-photo-card">
               <img src="/team/team1.jpeg" alt="Dreams of Bangladesh Team" className="group-photo" />
             </GlassCard>
-            <GlassCard hover={false} className="group-photo-card">
-              <img src="/team/team2.jpeg" alt="Dreams of Bangladesh Team" className="group-photo" />
-            </GlassCard>
           </div>
+          <p className="gallery-link-text">
+            View more team photos in our <a href="/gallery" className="gallery-link">Gallery</a>
+          </p>
         </div>
       </AnimatedSection>
 
