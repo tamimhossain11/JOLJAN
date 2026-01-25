@@ -151,23 +151,23 @@ const Gallery = () => {
         <div className="container">
           {images.length > 0 && (
             <>
-              <div className="gallery-count">
+          <div className="gallery-count">
                 <p>Showing {images.length} photo{images.length !== 1 ? 's' : ''}</p>
-              </div>
-              <div className="gallery-grid">
+          </div>
+          <div className="gallery-grid">
                 {images.map((image, index) => (
-                  <AnimatedSection key={index} delay={index * 0.05}>
-                    <GlassCard className="gallery-item" hover={false}>
-                      <div className="gallery-image">
-                        <img src={image.src} alt={image.title} />
-                        <div className="gallery-overlay">
-                          <p className="gallery-title">{image.title}</p>
-                        </div>
-                      </div>
-                    </GlassCard>
-                  </AnimatedSection>
-                ))}
-              </div>
+              <AnimatedSection key={index} delay={index * 0.05}>
+                <GlassCard className="gallery-item" hover={false}>
+                  <div className="gallery-image">
+                    <img src={image.src} alt={image.title} />
+                    <div className="gallery-overlay">
+                      <p className="gallery-title">{image.title}</p>
+                    </div>
+                  </div>
+                </GlassCard>
+              </AnimatedSection>
+            ))}
+          </div>
             </>
           )}
 

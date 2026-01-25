@@ -311,10 +311,10 @@ const Boat = () => {
       <AnimatedSection className="design-3d-section">
         <div className="container">
           <div className="section-header-3d">
-            <h2 className="section-title">3D Design & Components</h2>
-            <p className="section-subtitle">
+          <h2 className="section-title">3D Design & Components</h2>
+          <p className="section-subtitle">
               Explore every angle and component of DoB Joljan's design. Click on any image to view in full screen.
-            </p>
+          </p>
           </div>
           
           <div className="design-gallery-grid">
@@ -337,14 +337,14 @@ const Boat = () => {
                       <div className="gallery-overlay">
                         <FiMaximize2 className="expand-icon" />
                         <span className="view-text">Click to view</span>
-                      </div>
-                    </div>
+                </div>
+                </div>
                     <div className="gallery-label">
                       <p>{image.label}</p>
-                    </div>
-                  </GlassCard>
+                </div>
+              </GlassCard>
                 </motion.div>
-              </AnimatedSection>
+            </AnimatedSection>
             ))}
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiUsers, FiTool, FiCpu, FiFileText } from 'react-icons/fi';
+import { FiUsers, FiTool, FiCpu, FiFileText, FiActivity } from 'react-icons/fi';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 import Footer from '../components/Footer';
@@ -43,14 +43,14 @@ const Team = () => {
           image: '/team/alamin.jpeg'
         },
         {
-          name: 'Dewan MD Foyzullah',
-          role: 'Mechanical Co-Lead',
-          image: '/team/munim.jpeg'
+          name: 'Samin Yaser',
+          role: 'Mechanical Member',
+          image: '/team/samin.jpeg'
         },
         {
-          name: 'Ishmam Tahsan Masafi',
-          role: 'Testing Lead',
-          image: '/team/masafi.jpeg'
+          name: 'Mohammed Nawfil Aziz',
+          role: 'Mechanical Member',
+          image: '/team/nawfil.jpeg'
         },
       ]
     },
@@ -62,14 +62,24 @@ const Team = () => {
       description: 'Power systems, sensors, and electronic integration',
       members: [
         {
-          name: 'Kamrul Islam',
+          name: 'Dewan MD Foyzullah',
           role: 'Electrical Lead',
-          image: '/team/kamrul.jpeg'
+          image: '/team/munim.jpeg'
         },
         {
           name: 'Abrar Atif Rahman',
-          role: 'Electrical Co-Lead',
+          role: 'Electrical Member',
           image: '/team/atif.jpeg'
+        },
+        {
+          name: 'Ayaan Islam Ariyan',
+          role: 'Electrical Member',
+          image: '/team/ariyan.jpeg'
+        },
+        {
+          name: 'Kamrul Islam',
+          role: 'Electrical Member',
+          image: '/team/kamrul.jpeg'
         },
       ]
     },
@@ -81,28 +91,28 @@ const Team = () => {
       description: 'Autonomous navigation and control systems',
       members: [
         {
-          name: 'Anas Bim Azim',
+          name: 'Anas Bin Azim',
           role: 'Software Lead',
           image: '/team/anas.jpeg'
+        },
+        {
+          name: 'MD Asadullah Sami',
+          role: 'Software Member',
+          image: '/team/sami.jpeg'
         },
       ]
     },
     {
-      id: 'website',
-      icon: <FiFileText />,
-      name: 'Website Team',
-      color: '#ffa751',
-      description: 'Web development and digital presence',
+      id: 'testing',
+      icon: <FiActivity />,
+      name: 'Testing Team',
+      color: '#f59e0b',
+      description: 'Quality assurance, testing, and validation',
       members: [
         {
-          name: 'Tamim Hossain',
-          role: 'Website Lead',
-          image: '/team/tamim.jpeg'
-        },
-        {
-          name: 'MD Asadullah Sami',
-          role: 'Website Co-Lead',
-          image: '/team/sami.jpeg'
+          name: 'Ishmam Tahsan Masafi',
+          role: 'Testing Lead',
+          image: '/team/masafi.jpeg'
         },
       ]
     },
@@ -118,10 +128,19 @@ const Team = () => {
           role: 'Documentation Lead',
           image: '/team/ahnaf.jpeg'
         },
+      ]
+    },
+    {
+      id: 'website',
+      icon: <FiFileText />,
+      name: 'Website Team',
+      color: '#ffa751',
+      description: 'Web development and digital presence',
+      members: [
         {
-          name: 'Samin Yaser',
-          role: 'Documentation Co-Lead',
-          image: '/team/samin.jpeg'
+          name: 'Tamim Hossain',
+          role: 'Website Lead',
+          image: '/team/tamim.jpeg'
         },
       ]
     },
@@ -136,16 +155,6 @@ const Team = () => {
           name: 'Mohammad Sifat',
           role: 'Visual Lead',
           image: '/team/sifat.jpeg'
-        },
-        {
-          name: 'Mohammed Nawfil Aziz',
-          role: 'Media & Outreach Lead',
-          image: '/team/nawfil.jpeg'
-        },
-        {
-          name: 'Ayaan Islam Ariyan',
-          role: 'Media & Outreach Co-Lead',
-          image: '/team/ariyan.jpeg'
         },
       ]
     }
