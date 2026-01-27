@@ -25,7 +25,7 @@ import '../styles/Blog.css';
 
 const Blog = () => {
   const categories = [
-    { name: 'All Posts', icon: <FiBookOpen />, color: '#667eea' },
+    { name: 'All Posts', icon: <FiBookOpen />, color: '#0ea5e9' },
     { name: 'Weekly Updates', icon: <FiCalendar />, color: '#43e97b' },
     { name: 'Testing Days', icon: <FiCheckCircle />, color: '#4facfe' },
     { name: 'Design Decisions', icon: <FiTool />, color: '#f093fb' },

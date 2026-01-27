@@ -44,7 +44,7 @@ const Contact = () => {
       title: 'Email Address',
       value: 'dreamsofbangladesh@gmail.com',
       link: 'mailto:dreamsofbangladesh@gmail.com',
-      color: '#667eea'
+      color: '#0ea5e9'
     },
     {
       icon: <FiMapPin size={24} />,

@@ -19,7 +19,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
   color: white;
   margin-bottom: 1.5rem;
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
@@ -29,7 +29,7 @@
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -162,7 +162,7 @@
 }
 
 .gallery-link {
-  color: #667eea;
+  color: #0ea5e9;
   font-weight: 600;
   text-decoration: none;
   position: relative;
@@ -176,12 +176,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
   transition: width 0.3s ease;
 }
 
 .gallery-link:hover {
-  color: #764ba2;
+  color: #06b6d4;
 }
 
 .gallery-link:hover::after {
@@ -315,7 +315,7 @@
 .member-role {
   font-size: 1rem;
   font-weight: 500;
-  color: #667eea;
+  color: #0ea5e9;
   margin: 0;
 }
 
@@ -373,7 +373,7 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -439,7 +439,7 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
   color: white;
   border: none;
   box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);

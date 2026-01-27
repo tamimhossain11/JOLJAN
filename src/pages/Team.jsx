@@ -34,7 +34,7 @@ const Team = () => {
       id: 'mechanical',
       icon: <FiTool />,
       name: 'Mechanical Team',
-      color: '#667eea',
+      color: '#0ea5e9',
       description: 'Designing and building the physical structure and systems',
       members: [
         {

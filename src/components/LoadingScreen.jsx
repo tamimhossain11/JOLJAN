@@ -30,20 +30,8 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {/* Background Video */}
-        <video
-          className="loading-video"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/Joljan.mp4" type="video/mp4" />
-        </video>
+        {/* Video Overlay Removed - using global video */}
 
-        {/* Video Overlay */}
-        <div className="loading-overlay"></div>
-        
         <div className="loading-content">
           <motion.div
             className="loading-logo"
@@ -51,14 +39,14 @@ const LoadingScreen = ({ onLoadingComplete }) => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img 
-              src={isDark ? "/joljan.png" : "/logo-white.PNG"} 
-              alt="DoB Joljan" 
-              className="loading-logo-image" 
+            <img
+              src={isDark ? "/joljan.png" : "/logo-white.PNG"}
+              alt="DoB Joljan"
+              className="loading-logo-image"
             />
             <p className="loading-subtitle">RoboBoat 2026</p>
           </motion.div>
-          
+
           <motion.div
             className="progress-container"
             initial={{ opacity: 0, y: 20 }}

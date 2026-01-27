@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
 import LoadingScreen from './components/LoadingScreen';
+import BackgroundVideo from './components/BackgroundVideo';
 import Header from './components/Header';
 import Home from './pages/Home';
 import RoboBoat from './pages/RoboBoat';
@@ -149,6 +150,7 @@ function App() {
             </main>
           </>
         )}
+        <BackgroundVideo isLoading={isLoading} />
       </Router>
     </ThemeProvider>
   );

@@ -21,7 +21,7 @@ const MapComponent = () => {
         .addTo(map)
         .bindPopup(`
           <div style="text-align: center; font-family: sans-serif;">
-            <strong style="font-size: 16px; color: #667eea;">Dreams of Bangladesh</strong>
+            <strong style="font-size: 16px; color: #0ea5e9;">Dreams of Bangladesh</strong>
             <p style="margin: 5px 0; color: #666;">RoboBoat 2026 Team</p>
             <p style="margin: 0; font-size: 12px; color: #999;">Dhaka, Bangladesh</p>
           </div>

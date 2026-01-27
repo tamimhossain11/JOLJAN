@@ -20,7 +20,7 @@ const Home = () => {
       title: 'The Boat',
       description: 'Explore our autonomous surface vehicle',
       link: '/boat',
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-sky-500 to-cyan-500' // Changed from purple to sky/cyan
     },
     {
       icon: <FiUsers size={40} />,
@@ -42,62 +42,52 @@ const Home = () => {
     <div className="home-page">
       {/* Hero Section with strong visual */}
       <section className="hero-section">
-        {/* Background Video */}
-        <video
-          className="hero-video"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/Joljan.mp4" type="video/mp4" />
-        </video>
-        
-        <div className="hero-overlay"></div>
+        {/* Background Video handled globally by BackgroundVideo.jsx */}
+
         <div className="hero-content">
-          <motion.h1
-            className="hero-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            DoB <span className="gradient-text">Joljan</span>
-          </motion.h1>
-          
-          <motion.h2
-            className="hero-subtitle"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Innovation on Water. Teamwork on Land.
-          </motion.h2>
-          
-          <motion.p
-            className="hero-description"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            Autonomous marine robotics for RoboBoat 2026. Built with precision, tested with 
-            persistence, and driven by innovation.
-          </motion.p>
-          
-          <motion.div
-            className="hero-buttons"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <Link to="/boat" className="btn btn-primary">
-              Explore the Boat <FiArrowRight />
-            </Link>
-            <Link to="/roboboat" className="btn btn-secondary">
-              RoboBoat 2026
-            </Link>
-          </motion.div>
+          <div className="hero-cards-container">
+            {/* Card 1: Title & Subtitle */}
+            <GlassCard className="hero-glass-card" hover={false}>
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <h1 className="hero-title">
+                  DoB <span className="gradient-text">Joljan</span>
+                </h1>
+                <h2 className="hero-subtitle">
+                  Innovation on Water.
+                  <br />
+                  Teamwork on Land.
+                </h2>
+              </motion.div>
+            </GlassCard>
+
+            {/* Card 2: Description & Actions */}
+            <GlassCard className="hero-glass-card" hover={false}>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <p className="hero-description">
+                  Autonomous marine robotics for RoboBoat 2026. Built with precision, tested with
+                  persistence, and driven by innovation.
+                </p>
+                <div className="hero-buttons">
+                  <Link to="/boat" className="btn btn-primary">
+                    Explore the Boat <FiArrowRight />
+                  </Link>
+                  <Link to="/roboboat" className="btn btn-secondary">
+                    RoboBoat 2026
+                  </Link>
+                </div>
+              </motion.div>
+            </GlassCard>
+          </div>
         </div>
-        
+
         <div className="hero-background">
           <div className="wave-animation"></div>
         </div>
@@ -112,14 +102,14 @@ const Home = () => {
           </p>
           <GlassCard hover={false} className="video-card">
             <div className="video-wrapper-home">
-              <iframe 
-                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F699511343100055%2F&show_text=false&width=560&t=0" 
-                width="560" 
-                height="314" 
-                style={{border: 'none', overflow: 'hidden'}} 
-                scrolling="no" 
-                frameBorder="0" 
-                allowFullScreen={true} 
+              <iframe
+                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F699511343100055%2F&show_text=false&width=560&t=0"
+                width="560"
+                height="314"
+                style={{ border: 'none', overflow: 'hidden' }}
+                scrolling="no"
+                frameBorder="0"
+                allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 title="Team & Project Overview"
               ></iframe>
@@ -134,12 +124,12 @@ const Home = () => {
           <div className="about-dob-content">
             <div className="about-dob-text">
               <h2 className="section-title">About Dreams of Bangladesh</h2>
-              
+
               <div className="about-subsection">
                 <h3><FiUsers className="inline-icon" /> Who We Are</h3>
                 <p>
-                  Dreams of Bangladesh (DoB) is a youth-led organization making robotics and marine technology 
-                  accessible to students across Bangladesh. We believe in learning by building—turning ideas into 
+                  Dreams of Bangladesh (DoB) is a youth-led organization making robotics and marine technology
+                  accessible to students across Bangladesh. We believe in learning by building—turning ideas into
                   working projects through hands-on experience in robotics, embedded systems, AI, and autonomous systems.
                 </p>
               </div>
@@ -147,8 +137,8 @@ const Home = () => {
               <div className="about-subsection">
                 <h3><FiTarget className="inline-icon" /> Why RoboBoat</h3>
                 <p>
-                  RoboBoat 2026 gives us the opportunity to apply our skills in real-world marine robotics, 
-                  represent Bangladesh internationally, and push our limits as engineers and innovators. 
+                  RoboBoat 2026 gives us the opportunity to apply our skills in real-world marine robotics,
+                  represent Bangladesh internationally, and push our limits as engineers and innovators.
                   Every challenge teaches us resilience, teamwork, and creative problem-solving.
                 </p>
               </div>
@@ -156,8 +146,8 @@ const Home = () => {
               <div className="about-subsection">
                 <h3><FiZap className="inline-icon" /> Our Vision</h3>
                 <p>
-                  To empower the next generation of Bangladeshi engineers and innovators, proving that 
-                  great ideas can come from anywhere. We're building confidence, competence, and a 
+                  To empower the next generation of Bangladeshi engineers and innovators, proving that
+                  great ideas can come from anywhere. We're building confidence, competence, and a
                   community that will contribute to global challenges in robotics and beyond.
                 </p>
               </div>
@@ -165,9 +155,9 @@ const Home = () => {
 
             <div className="about-dob-visual">
               <GlassCard hover={false} className="team-boat-photo-card">
-                <img 
-                  src="/gallery/team-boat-1.jpg" 
-                  alt="Dreams of Bangladesh Team with Boat" 
+                <img
+                  src="/gallery/team-boat-1.jpg"
+                  alt="Dreams of Bangladesh Team with Boat"
                   className="team-boat-image"
                 />
               </GlassCard>

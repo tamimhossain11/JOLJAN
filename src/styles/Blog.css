@@ -19,7 +19,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
   color: white;
   margin-bottom: 1.5rem;
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
@@ -29,7 +29,7 @@
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -135,7 +135,7 @@
 
 .blog-image-icon {
   font-size: 4rem;
-  color: #667eea;
+  color: #0ea5e9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,7 +229,7 @@
   padding: 0.75rem 1.5rem;
   background: transparent;
   border: none;
-  color: #667eea;
+  color: #0ea5e9;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
@@ -238,7 +238,7 @@
 
 .blog-read-more:hover {
   transform: translateX(5px);
-  color: #764ba2;
+  color: #06b6d4;
 }
 
 /* Newsletter Section */
@@ -312,13 +312,13 @@
 }
 
 .newsletter-input:focus {
-  border-color: #667eea;
+  border-color: #0ea5e9;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .newsletter-btn {
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
   border: none;
   border-radius: 50px;
   color: white;
