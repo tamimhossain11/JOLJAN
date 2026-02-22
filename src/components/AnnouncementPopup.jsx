@@ -11,12 +11,8 @@ const AnnouncementPopup = () => {
     const hasSeenAnnouncement = localStorage.getItem('hasSeenAnnouncement');
     
     if (!hasSeenAnnouncement) {
-      // Show popup after a short delay
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-      }, 1500);
-      
-      return () => clearTimeout(timer);
+      // Show popup immediately when website loads
+      setIsVisible(true);
     }
   }, []);
 
@@ -42,10 +38,16 @@ const AnnouncementPopup = () => {
           {/* Popup */}
           <motion.div
             className="announcement-popup"
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 50 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)'
+            }}
           >
             <button className="popup-close-btn" onClick={handleClose}>
               <FiX size={24} />
