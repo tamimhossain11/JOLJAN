@@ -42,7 +42,18 @@ const Home = () => {
     <div className="home-page">
       {/* Hero Section with strong visual */}
       <section className="hero-section">
-        {/* Background Video handled globally by BackgroundVideo.jsx */}
+        {/* Video Background for Hero Section Only */}
+        <div className="hero-video-background">
+          <div className="hero-video-container">
+            <iframe
+              src="https://www.youtube.com/embed/BdAPLEA6Wfc?autoplay=1&mute=1&controls=0&loop=1&playlist=BdAPLEA6Wfc&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&enablejsapi=1"
+              title="Hero Background Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            />
+          </div>
+          <div className="hero-video-overlay"></div>
+        </div>
 
         <div className="hero-content">
           <div className="hero-cards-container">
@@ -240,6 +251,115 @@ const Home = () => {
               <div className="stat-label">RoboBoat Competition</div>
             </GlassCard>
           </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Chief Advisor Highlight Section */}
+      <AnimatedSection className="advisor-section">
+        <div className="container">
+          <h2 className="section-title">Our Leadership</h2>
+          <p className="section-subtitle">
+            Guided by the visionary leadership of Bangladesh
+          </p>
+          <GlassCard className="advisor-card" hover={false}>
+            <div className="advisor-content">
+              <div className="advisor-image-wrapper">
+                <img
+                  src="/chief-advisor.jpg"
+                  alt="Professor Muhammad Yunus"
+                  className="advisor-image"
+                />
+              </div>
+              <div className="advisor-info">
+                <h3>Professor Muhammad Yunus</h3>
+                <p className="advisor-title-text">Chief Advisor, Interim Government of Bangladesh</p>
+                <p>
+                  We are honored to have the support of the Government of Bangladesh under the leadership of 
+                  Nobel Laureate Professor Muhammad Yunus, Chief Advisor of the Interim Government. His vision 
+                  for youth empowerment and innovation inspires our mission to represent Bangladesh on the 
+                  global stage at RoboBoat 2026.
+                </p>
+                <div className="advisor-badges">
+                  <div className="advisor-badge">
+                    <FiAward className="badge-icon" />
+                    <span>Nobel Laureate</span>
+                  </div>
+                  <div className="advisor-badge">
+                    <FiShield className="badge-icon" />
+                    <span>Government Support</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </GlassCard>
+        </div>
+      </AnimatedSection>
+
+      {/* Joljan Animation Section */}
+      <AnimatedSection className="joljan-animation-section">
+        <div className="container">
+          <h2 className="section-title">Animation of Joljan</h2>
+          <p className="section-subtitle">
+            Watch the journey of our autonomous surface vehicle come to life
+          </p>
+          <GlassCard hover={false} className="video-card">
+            <div className="video-wrapper-home">
+              <iframe
+                src="https://www.youtube.com/embed/C4dy5pLnOiY"
+                width="560"
+                height="314"
+                style={{ border: 'none', overflow: 'hidden' }}
+                scrolling="no"
+                frameBorder="0"
+                allowFullScreen={true}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                title="Joljan Animation"
+              ></iframe>
+            </div>
+          </GlassCard>
+        </div>
+      </AnimatedSection>
+
+      {/* ICT Division Collaboration Section */}
+      <AnimatedSection className="collaboration-section">
+        <div className="container">
+          <h2 className="section-title">Our Partners</h2>
+          <p className="section-subtitle">
+            Proudly collaborating with industry leaders and government organizations
+          </p>
+          <GlassCard className="collaboration-card" hover={false}>
+            <div className="collaboration-content">
+              <div className="partner-logo-wrapper">
+                <img
+                  src="/ict-division.jpg"
+                  alt="ICT Division Bangladesh"
+                  className="partner-logo"
+                />
+              </div>
+              <div className="collaboration-info">
+                <h3>ICT Division, Bangladesh</h3>
+                <p>
+                  Dreams of Bangladesh is proud to collaborate with the ICT Division of Bangladesh. 
+                  This partnership supports our mission to advance robotics and autonomous systems 
+                  education in Bangladesh, empowering the next generation of engineers and innovators.
+                </p>
+                <div className="collaboration-highlights">
+                  <div className="collab-highlight">
+                    <FiShield className="collab-icon" />
+                    <span>Government Support</span>
+                  </div>
+                  <div className="collab-highlight">
+                    <FiZap className="collab-icon" />
+                    <span>Technology Advancement</span>
+                  </div>
+                  <div className="collab-highlight">
+                    <FiUsers className="collab-icon" />
+                    <span>Youth Empowerment</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </GlassCard>
         </div>
       </AnimatedSection>
 

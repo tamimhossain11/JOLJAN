@@ -16,7 +16,6 @@ const Header = () => {
     { name: 'RoboBoat 2026', path: '/roboboat' },
     { name: 'The Boat', path: '/boat' },
     { name: 'The Team', path: '/team' },
-    { name: 'Projects', path: '/projects' },
     { name: 'Blog', path: '/blog' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },

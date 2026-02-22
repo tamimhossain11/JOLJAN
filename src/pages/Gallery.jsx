@@ -17,6 +17,8 @@ const Gallery = () => {
     { id: 'outreach', name: 'Outreach', icon: <FiZap /> },
     { id: 'discussion', name: 'Discussions', icon: <FiUsers /> },
     { id: 'testing', name: 'Testing', icon: <FiZap /> },
+    { id: 'usa-trip', name: 'USA Trip', icon: <FiActivity /> },
+    { id: 'expo', name: 'Expo Events', icon: <FiCamera /> },
   ];
 
   const galleryImages = [
@@ -63,6 +65,39 @@ const Gallery = () => {
       category: 'testing',
       type: 'video'
     },
+    { 
+      src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F17WHEM3jL5%2F&show_text=false&width=560&t=0', 
+      title: 'Training Session', 
+      category: 'testing',
+      type: 'video'
+    },
+    { 
+      src: 'https://www.youtube.com/embed/C4dy5pLnOiY', 
+      title: 'STEM Engagement', 
+      category: 'testing',
+      type: 'video'
+    },
+
+    // USA Trip Photos - RoboBoat 2026
+    { src: '/usa/617384190_812481548532818_3748317192835911084_n.jpg', title: 'Team at RoboBoat 2026, USA', category: 'usa-trip' },
+    { src: '/usa/imag-2.jpg', title: 'USA Trip - Moment 2', category: 'usa-trip' },
+    { src: '/usa/img-3.jpg', title: 'USA Trip - Moment 3', category: 'usa-trip' },
+    { src: '/usa/img-4.jpg', title: 'USA Trip - Moment 4', category: 'usa-trip' },
+    { src: '/usa/img-5.jpg', title: 'USA Trip - Moment 5', category: 'usa-trip' },
+    { src: '/usa/img-6.jpg', title: 'USA Trip - Moment 6', category: 'usa-trip' },
+    { src: '/usa/img-7.jpg', title: 'USA Trip - Moment 7', category: 'usa-trip' },
+    { src: '/usa/img-8.jpg', title: 'USA Trip - Moment 8', category: 'usa-trip' },
+    { src: '/usa/img-9.jpg', title: 'USA Trip - Moment 9', category: 'usa-trip' },
+    { src: '/usa/img-10.jpg', title: 'USA Trip - Moment 10', category: 'usa-trip' },
+    { src: '/usa/img-11.jpg', title: 'USA Trip - Moment 11', category: 'usa-trip' },
+    { src: '/usa/img-12.jpg', title: 'USA Trip - Moment 12', category: 'usa-trip' },
+
+    // Expo Event Photos
+    { src: '/expo/619683642_122113185951142733_7224546718174632472_n.jpg', title: 'Expo Event 2024', category: 'expo' },
+    { src: '/expo/img-2.jpg', title: 'Expo Event - Display 2', category: 'expo' },
+    { src: '/expo/img-3.jpg', title: 'Expo Event - Display 3', category: 'expo' },
+    { src: '/expo/img-4.jpg', title: 'Expo Event - Display 4', category: 'expo' },
+    { src: '/expo/img-5.jpg', title: 'Expo Event - Display 5', category: 'expo' },
   ];
 
   const filteredImages = selectedCategory === 'all' 

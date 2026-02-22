@@ -1,5 +1,10 @@
 .home-page {
   min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+[data-theme='light'] .home-page {
+  background: var(--bg-primary);
 }
 
 /* Hero Section */
@@ -17,7 +22,45 @@
   background: transparent;
 }
 
+/* Hero Video Background */
+.hero-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
 
+.hero-video-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.3);
+  width: 100vw;
+  height: 100vh;
+  min-width: 177.77vh;
+  min-height: 56.25vw;
+}
+
+.hero-video-container iframe {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border: none;
+  opacity: 0.8;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+}
 
 .hero-content {
   position: relative;
@@ -656,5 +699,217 @@
 
   .stat-number {
     font-size: 2.5rem;
+  }
+}
+
+/* Advisor Section */
+.advisor-section {
+  padding: 6rem 0;
+}
+
+.advisor-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.advisor-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.advisor-image-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.advisor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.advisor-info {
+  padding: 2rem;
+}
+
+.advisor-info h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme='light'] .advisor-info h3 {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.advisor-title-text {
+  font-size: 1rem;
+  color: #0ea5e9;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.advisor-info p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+[data-theme='light'] .advisor-info p {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.advisor-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.advisor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+}
+
+/* Joljan Animation Section */
+.joljan-animation-section {
+  padding: 6rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme='light'] .joljan-animation-section {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Collaboration Section */
+.collaboration-section {
+  padding: 6rem 0;
+}
+
+.collaboration-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.collaboration-content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.partner-logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.partner-logo {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.collaboration-info {
+  padding: 2rem;
+}
+
+.collaboration-info h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme='light'] .collaboration-info h3 {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.collaboration-info p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+[data-theme='light'] .collaboration-info p {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.collaboration-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.collab-highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 20px;
+  color: #0ea5e9;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.collab-icon {
+  font-size: 1rem;
+}
+
+/* Responsive for new sections */
+@media (max-width: 768px) {
+  .advisor-content,
+  .collaboration-content {
+    grid-template-columns: 1fr;
+  }
+
+  .advisor-image-wrapper {
+    height: 250px;
+  }
+
+  .partner-logo-wrapper {
+    padding: 1rem;
+  }
+
+  .partner-logo {
+    max-width: 150px;
+  }
+
+  .advisor-section,
+  .joljan-animation-section,
+  .collaboration-section {
+    padding: 4rem 0;
+  }
+
+  .advisor-badges {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

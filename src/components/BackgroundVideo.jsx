@@ -4,7 +4,13 @@ import { useLocation } from 'react-router-dom';
 const BackgroundVideo = ({ isLoading }) => {
     const location = useLocation();
     const isHome = location.pathname === '/';
-    const showVideo = isLoading || isHome;
+    const showVideo = isLoading; // Only show video during loading
+
+    // Don't render any background for home page - hero section has its own video
+    // For other pages, show static image background
+    if (isHome && !isLoading) {
+        return null;
+    }
 
     return (
         <div
@@ -20,7 +26,7 @@ const BackgroundVideo = ({ isLoading }) => {
                 background: '#000',
             }}
         >
-            {/* Video Layer - Only rendered if Home or Loading */}
+            {/* Video Layer - Only rendered during loading */}
             {showVideo ? (
                 <div
                     className="background-video-inner"
@@ -50,7 +56,7 @@ const BackgroundVideo = ({ isLoading }) => {
                     />
                 </div>
             ) : (
-                /* Static Image Layer - For other pages */
+                /* Static Image Layer - For non-home pages */
                 <div
                     className="background-image-inner"
                     style={{

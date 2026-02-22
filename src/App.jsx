@@ -5,11 +5,11 @@ import { ThemeProvider } from './context/ThemeContext';
 import LoadingScreen from './components/LoadingScreen';
 import BackgroundVideo from './components/BackgroundVideo';
 import Header from './components/Header';
+import AnnouncementPopup from './components/AnnouncementPopup';
 import Home from './pages/Home';
 import RoboBoat from './pages/RoboBoat';
 import Boat from './pages/Boat';
 import Team from './pages/Team';
-import Projects from './pages/Projects';
 import Blog from './pages/Blog';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
@@ -70,19 +70,6 @@ const AnimatedRoutes = () => {
               transition={{ duration: 0.3 }}
             >
               <Team />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/projects"
-          element={
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Projects />
             </motion.div>
           }
         />
@@ -148,6 +135,7 @@ function App() {
             <main className="main-content">
               <AnimatedRoutes />
             </main>
+            <AnnouncementPopup />
           </>
         )}
         <BackgroundVideo isLoading={isLoading} />
